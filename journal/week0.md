@@ -37,7 +37,7 @@
 
 - [x] Create a Billing Alarm
 
-[alarm_config.json](../aws/json/week0-alarm_config.json)
+[alarm_config.json](../aws/json/alarm_config.json)
 
 ![CloudWatch Dashboard](./assets/week0-alarm.PNG)
 
