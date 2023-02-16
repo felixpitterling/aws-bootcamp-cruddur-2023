@@ -126,5 +126,20 @@
 
 ## Homework
 
+- [x] Conceptual Diagram
+
+ [Lucid Diagram Link](https://lucid.app/lucidchart/94ba19ca-dc63-4646-8aa5-59c6bd457592/edit?viewport_loc=-820%2C-442%2C3328%2C1598%2C0_0&invitationId=inv_cf5a0d28-eb97-4ab7-bf44-097bb0c41a65)
+
+![Conceptual Diagram in Lucid](./assets/week0-conceptual-diagram.PNG)
+
+- [] Logical Architectual Diagram
+- [x] Create an Admin User
+- [x] Use CloudShell
+- [x] Generate AWS Credentials
+- [x] Installed AWS CLI
+ 
+ [Gitpod Yaml File](../.gitpod.yml)
+ 
+ ![Identity check in gitpod](./assets/week0-cli.PNG)
 
 ## Homework Challenges 
