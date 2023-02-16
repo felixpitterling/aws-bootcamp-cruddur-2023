@@ -1,5 +1,5 @@
-# Week 0 — 
-g and Architecture
+# Week 0 — Billing and Architecture
+
 
 
 ## Class Notes
