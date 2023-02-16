@@ -26,6 +26,20 @@
  [Gitpod Yaml File](../.gitpod.yml)
  
  ![Identity check in gitpod](./assets/week0-cli.PNG)
+ 
+ - [x] Create a Budget
+
+ 
+[budget.json](../aws/json/budget.json),
+[budget-notifications-with-subscribers.json](../aws/json/budget-notifications-with-subscribers.json)
+ 
+ ![Budgets Dashboard](./assets/week0-budget.PNG) 
+
+- [x] Create a Billing Alarm
+
+[alarm_config.json](../aws/json/week0-alarm_config.json)
+
+![CloudWatch Dashboard](./assets/week0-alarm.PNG)
 
 ## Homework Challenges 
 
