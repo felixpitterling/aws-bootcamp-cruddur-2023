@@ -1,4 +1,5 @@
-# Week 0 — Billing and Architecture
+# Week 0 — 
+g and Architecture
 
 
 ## Class Notes
@@ -10,22 +11,22 @@
 > The sustainability pillar is the underdog - Margaret Valtierra
 
 - 4C Model vs TOGAF vs DOD Framework vs ...
-  - All ask the same question: how to make sometimg complicated → simple
+  - All ask the same question: how to make something complicated → simple
 
 ### _1. Real-Life Scenario (with Margaret Valtierra)_
 
-- Situation: Metting with investors and & board
+- Situation: Meeting with investors and & board
 - Big-Idea: CRUD Social Media App
 - User Target: Students & Busy Professionals
 - Concepts:
-  - TIme-Limited Content
+  - Time-Limited Content
   - Authentication
   - **Microservice** architecture
-    - Seperate authentication, UI, bussiness, logic
+    - Separate authentication, UI, business, logic
     - Platform of choice: AWS
 - Iron Triangle (Scope, Time, Cost - Choose two)
 - Front-End: JS + React
-- Back-End: Pyhon + Flask
+- Back-End: Python + Flask
 - **Technical report due for investors**
   - Architecture
   - Budget
@@ -80,7 +81,7 @@
 - bash scripting language
 - Concept of binary files and /usr/local/bin
 - Concept of path environment variable
-  - Items are seperated by a colon
+  - Items are separated by a colon
   - $ is a environment variable initializer
   - Can be added into scripts (example: AWS IaC stuff)
 
@@ -88,8 +89,8 @@
 ### _5. [NOT LIVE] Spend Considerations: Pricing Basics and Free tier (with Chirag Nayyar)_
 
 - Pricing can vary based on your region
-- Make use of current and forcated usage
-- Blling service is only available in N. Virgina
+- Make use of current and forecasted  usage
+- Billing service is only available in N. Virginia
 - Tagging is a good practice
 - Report feature is used in the real world
 - AWS Free Tier: Free trials vs 12 months free vs always free
@@ -97,7 +98,30 @@
 
 ### _6. [NOT LIVE] Security Considerations: Organizations & AWS IAM (with Ashish Rajan)_
 
-
+- Goal: Identify & inform the business on any technical risk that the business maybe exposed to
+- AWS Organizations & Organizational Units
+  - Useful to manage policies across multiple accounts
+  - Tagging is a good practice
+  - Active and standby account pools
+- AWS Cloud Trail
+  - Service to monitor AWS activity
+  - Only tracks in regions which have been activated
+  - Created trail as shown in lecture
+- IAM (Global Service)
+  - 3 kinds of User(s) - root user, IAM users, system users, federated users
+  - Principle of least privilege
+- IAM Roles
+  - 2 types of IAM Roles (linked to services) & IAM Policies (linked to accounts, groups, organizations OR IAM Identity)
+- Recommended groups: engineer, admin
+- SCP (Service Control Policies)
+  - Shared responsibility (AWS "of the cloud", customer "in the cloud")
+- More advanced services like GuardDuty are not free
+- Top 5 Best Practices
+  - data protection & residency
+  - IAM & least privilege
+  - consider governance & compliance 
+  - shared responsibility of threat detection
+  - plan incident response ahead
 
 
 ## Homework
