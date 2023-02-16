@@ -8,10 +8,19 @@
 
 ![Conceptual Diagram in Lucid](./assets/week0-conceptual-diagram.PNG)
 
-- [] Logical Architectual Diagram
+- [x] Logical Architectual Diagram
+
+ [Lucid Diagram Link](https://lucid.app/lucidchart/779c8a31-bc89-4566-866e-d867c623207c/edit?viewport_loc=33%2C214%2C3138%2C1335%2C0_0&invitationId=inv_20c78894-3f2d-4032-95e8-e4eea91db021)
+ 
+ ![Logical Diagram in Lucid](./assets/week0-logical-diagram.png)
+
 - [x] Create an Admin User
 - [x] Use CloudShell
+
 - [x] Generate AWS Credentials
+
+ ![AWS Dashboard](./assets/week0-credentials.PNG)
+
 - [x] Installed AWS CLI
  
  [Gitpod Yaml File](../.gitpod.yml)
