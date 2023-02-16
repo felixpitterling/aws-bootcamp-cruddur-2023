@@ -1,9 +1,5 @@
 # Week 0 — Billing and Architecture
 
-## Bootcamp Intro Notes
-
-- 14 Week bootcamp (possibly longer)
-- CRUD App
 
 ## Class Notes
 
@@ -87,3 +83,24 @@
   - Items are seperated by a colon
   - $ is a environment variable initializer
   - Can be added into scripts (example: AWS IaC stuff)
+
+
+### _5. [NOT LIVE] Spend Considerations: Pricing Basics and Free tier (with Chirag Nayyar)_
+
+- Pricing can vary based on your region
+- Make use of current and forcated usage
+- Blling service is only available in N. Virgina
+- Tagging is a good practice
+- Report feature is used in the real world
+- AWS Free Tier: Free trials vs 12 months free vs always free
+
+
+### _6. [NOT LIVE] Security Considerations: Organizations & AWS IAM (with Ashish Rajan)_
+
+
+
+
+## Homework
+
+
+## Homework Challenges 
