@@ -4,36 +4,35 @@
 
 - [x] Conceptual Diagram
 
- [Lucid Diagram Link](https://lucid.app/lucidchart/94ba19ca-dc63-4646-8aa5-59c6bd457592/edit?viewport_loc=-820%2C-442%2C3328%2C1598%2C0_0&invitationId=inv_cf5a0d28-eb97-4ab7-bf44-097bb0c41a65)
+[Lucid Diagram Link](https://lucid.app/lucidchart/94ba19ca-dc63-4646-8aa5-59c6bd457592/edit?viewport_loc=-820%2C-442%2C3328%2C1598%2C0_0&invitationId=inv_cf5a0d28-eb97-4ab7-bf44-097bb0c41a65)
 
 ![Conceptual Diagram in Lucid](./assets/week0-conceptual-diagram.PNG)
 
 - [x] Logical Architectual Diagram
 
- [Lucid Diagram Link](https://lucid.app/lucidchart/779c8a31-bc89-4566-866e-d867c623207c/edit?viewport_loc=33%2C214%2C3138%2C1335%2C0_0&invitationId=inv_20c78894-3f2d-4032-95e8-e4eea91db021)
- 
- ![Logical Diagram in Lucid](./assets/week0-logical-diagram.png)
+[Lucid Diagram Link](https://lucid.app/lucidchart/779c8a31-bc89-4566-866e-d867c623207c/edit?viewport_loc=33%2C214%2C3138%2C1335%2C0_0&invitationId=inv_20c78894-3f2d-4032-95e8-e4eea91db021)
+
+![Logical Diagram in Lucid](./assets/week0-logical-diagram.png)
 
 - [x] Create an Admin User
 - [x] Use CloudShell
 
 - [x] Generate AWS Credentials
 
- ![AWS Dashboard](./assets/week0-credentials.PNG)
+![AWS Dashboard](./assets/week0-credentials.PNG)
 
 - [x] Installed AWS CLI
- 
- [Gitpod Yaml File](../.gitpod.yml)
- 
- ![Identity check in gitpod](./assets/week0-cli.PNG)
- 
- - [x] Create a Budget
 
- 
+[Gitpod Yaml File](../.gitpod.yml)
+
+![Identity check in gitpod](./assets/week0-cli.PNG)
+
+- [x] Create a Budget
+
 [budget.json](../aws/json/budget.json),
 [budget-notifications-with-subscribers.json](../aws/json/budget-notifications-with-subscribers.json)
- 
- ![Budgets Dashboard](./assets/week0-budget.PNG) 
+
+![Budgets Dashboard](./assets/week0-budget.PNG)
 
 - [x] Create a Billing Alarm
 
@@ -41,7 +40,32 @@
 
 ![CloudWatch Dashboard](./assets/week0-alarm.PNG)
 
-## Homework Challenges 
+## Homework Challenges
+
+- [x] Destroy your root account credentials, Set MFA, IAM role
+
+![Destroyed root account access](./assets/week0-rootcredentials.PNG)
+
+![MFA for admin and root accounts](./assets/week0-MFA.PNG)
+
+![Example role allowing EC2 to call services on my behalf](./assets/week0-role.PNG)
+
+- [x] Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue.
+
+![Event bridge overview](./assets/week0-healthSNS.PNG)
+![Event bridge target](./assets/week0-healthSNS-target.PNG)
+
+- [x] Review all the questions of each pillars in the Well Architected Tool
+
+  For this task I read through all questions while considering our CRUDDUR
+
+  ![Well-Architected Tool](./assets/week0-wa-tool.PNG)
+
+- [] Architectural diagram with CI/CD logical pipeline
+
+- [x] Research the technical and service limits of specific services
+
+![Support Ticket](./assets/week0-ticket.PNG)
 
 ## Class Notes
 
@@ -126,16 +150,14 @@
   - $ is a environment variable initializer
   - Can be added into scripts (example: AWS IaC stuff)
 
-
 ### _5. [NOT LIVE] Spend Considerations: Pricing Basics and Free tier (with Chirag Nayyar)_
 
 - Pricing can vary based on your region
-- Make use of current and forecasted  usage
+- Make use of current and forecasted usage
 - Billing service is only available in N. Virginia
 - Tagging is a good practice
 - Report feature is used in the real world
 - AWS Free Tier: Free trials vs 12 months free vs always free
-
 
 ### _6. [NOT LIVE] Security Considerations: Organizations & AWS IAM (with Ashish Rajan)_
 
@@ -160,9 +182,6 @@
 - Top 5 Best Practices
   - data protection & residency
   - IAM & least privilege
-  - consider governance & compliance 
+  - consider governance & compliance
   - shared responsibility of threat detection
   - plan incident response ahead
-
-
-
