@@ -61,7 +61,14 @@
 
   ![Well-Architected Tool](./assets/week0-wa-tool.PNG)
 
-- [] Architectural diagram with CI/CD logical pipeline
+- [x] Architectural diagram with CI/CD logical pipeline
+
+I was not really sure how to create the diagram. I came up with this after looking at a few examples online.
+
+[Lucid Diagram Link](https://lucid.app/lucidchart/53265279-5521-47bf-a6d1-b1157e158958/edit?viewport_loc=-1684%2C-543%2C5060%2C2617%2C0_0&invitationId=inv_d5cffe8d-bf8d-45d3-8ae0-ceaa8f6e90f1)
+
+![CI/CD Pipeline Diagram](./assets/week0-cicd.png)
+
 
 - [x] Research the technical and service limits of specific services
 
