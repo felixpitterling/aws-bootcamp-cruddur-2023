@@ -16,7 +16,7 @@
 
 - jFrog - library for artifacts (like libraries)
 
-- Docker stores images (github stores code)
+- Docker stores images (GitHub stores code)
 
 - Docker uses a layered approach
 
@@ -27,7 +27,7 @@
 - `docker build -t  backend-flask ./backend-flask`
 
   - `-t` flag is used to tag the resulting image with a given name and optionally a tag
-  - without any verison tag, latest will be applied
+  - without any version tag, latest will be applied
 
 - docker run
 
@@ -50,9 +50,9 @@
 
 - Container information: `docker ps` & `docker images`
 
-- Docker compose allows you to run multiple containers at the same time. And let them interact with eachother.
+- Docker compose allows you to run multiple containers at the same time. And let them interact with each other.
 
-### _2. [NOT LIVE] Spend Considerations: Gitpod, Github Codespaces, AWS Cloud9 and Cloudtrail (with Chirag Nayyar)_
+### _2. [NOT LIVE] Spend Considerations: GitPod, GitHub Codespaces, AWS Cloud9 and Cloudtrail (with Chirag Nayyar)_
 
 - GitPod
 
@@ -62,7 +62,7 @@
   - Calculator in gitpod.io is very useful
   - Instances stop automatically after 30 minutes
 
-- Github Codespaces
+- GitHub Codespaces
 
   - 60 hours / month free on low settings (2 cores)
 
@@ -76,4 +76,59 @@
   - Be careful with setting cloudtrail or avoid completely
     - Unselect SSE-KMS encryption
     - Only log management events
-  - Still does 90 day review automatically
+  - Still does 90-day review automatically
+
+### _3. [NOT LIVE] Security Considerations: Top 10 Docker Container Security Best Practices (with Ashish Rajan)_
+
+- Container security: practice of protecting your applications hosted on compute services (or locally)
+- Container first strategy
+  - No special requirements for running code
+- Managed Container Service: AWS ECS, AWS EKS
+- Un-Managed requires more resources to run (android vs iPhone comparison)
+
+- Doctor Components
+
+  - Docker Client (Build, Pull, Run features)
+  - ↓ REST API ↓
+  - Docher Server
+    - Docker Daemon (Docker Host)
+      - Containers
+    - Registry (private or public)
+      - Images
+
+- Container Security Components Considerations
+
+  - Docker & Host Configuration
+  - Securing images
+  - Secret management
+  - Monitoring Containers
+  - Data security
+  - ...
+
+- **Top 10 Practices**
+
+  1. Keep host, docker updated
+  2. Docker daemon & containers should run in non-root user mode
+  3. Image Vulnerability Scanning
+  4. Trusting a private vs public image registry
+  5. No sensitive data in docker files or images
+  6. Use secret management services
+  7. Read only fs and volume for docker
+  8. separate databases for long term storage
+  9. Use DevSecOps practices while building application security
+  10. Test code for vulnerabilities before production (including any dependencies)
+
+- Snyk OpenSource Security to identify docker compose vulnerabilities
+
+- AWS Secret Manager
+
+  - Alternative: Hashicorp Vault (use AWS library underneath)
+  - $0.4/months/secret
+
+- AWS Inspector
+
+  - Alternative: Clair
+  - Used to secure images
+
+- Snyk Container
+  - Get an overview of your containers and their security information
