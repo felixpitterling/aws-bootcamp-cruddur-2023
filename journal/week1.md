@@ -1,5 +1,33 @@
 # Week 1 — App Containerization
 
+## Homework
+
+## Homework Challenges
+
+- [x] Run the dockerfile CMD as an external script
+
+  - Created a shell script, [docker-start.sh](../docker-start.sh), to fun docker-compose.yml
+
+  ```
+   #!/bin/bash
+   docker-compose up
+  ```
+
+  ![Running the shell script](./assets/week1/week1-docker-shell-script.PNG)
+
+- [x] Push and tag a image to DockerHub
+
+  - [Repo Link](https://hub.docker.com/repository/docker/felixpitterling/cloud-camp/general)
+
+  ![DockedHub command](./assets/week1/week1-dockerhub.PNG)
+
+- Docker locally
+  - Installed docker desktop (linke to webstie) https://www.docker.com/
+  - Adapted current docker-compose (link to file)
+  - Set env vars (example code `export env...`)
+  - Ran using docker vs code extension
+  - Add screenshot
+
 ## Class Notes
 
 ### _1. [LIVE] Containerization Overview_
