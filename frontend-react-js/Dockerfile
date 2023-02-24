@@ -1,7 +1,7 @@
 FROM node:16.18
 
 ENV PORT=3000
-FROM BOOTCAMP
+
 COPY . /frontend-react-js
 WORKDIR /frontend-react-js
 RUN npm install
