@@ -2,6 +2,55 @@
 
 ## Homework
 
+- [x] Containerize Application
+
+  - After some issues with CORS and env vars I was able to get both the frontend and backend containers running. The problem was solved by switching to the GitPod web version instead of running GitPod through vscode on my local machine.
+
+  ![](./assets/week1/week1-postgres-dynamodb-containers.PNG)
+
+- [x] Document the Notification Endpoint for the OpenAI Document
+
+  - Changed [openapi.yaml](./../backend-flask/openapi-3.0.yml) file
+
+  - ```
+    /api/activities/notifications:
+    get:
+      description: 'return a feed of activity for all of those that I follow'
+      tags:
+        - activities
+      parameters: []
+      responses:
+        '200':
+          description: Returns an array of activities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity'
+    ```
+
+- [x] Write a Flask Backend Endpoint for Notifications
+
+  - ````@app.route("/api/activities/notifications", methods=['GET'])
+    def data_notifications():
+    data = NotificationsActivities.run()
+    return data, 200```
+    ````
+  - Created route in [notifications_activities.py](./../backend-flask/services/notifications_activities.py) and implemented it in [`app.py`](./../backend-flask/app.py)
+
+- [x] Write a React Page for Notifications
+
+  - Created [react page](./../frontend-react-js/src/pages/NotificationsFeedPage.js) for notifications and a corresponding [CSS file](./../frontend-react-js/src/pages/NotificationsFeedPage.css)
+  - ![Notification Page](./assets/week1/week1-notifications-working.PNG)
+
+- [x] Run DynamoDB Local & Postgres
+  - Added code to both [docker-compose](./../docker-compose.yml) and [GitPod config](./../.gitpod.yml) to install DynamoDB & Postgres in GitPod and to use them in Docker builds
+  - Got both DynamoDB Local & Postgres running in containers (see image in Containerize Application task section)
+  - DynamoDB CLI & Postgres Client:
+    - ![DynamoDB CLI](./assets/week1/week1-dynamodb-cli.PNG)
+    - ![Postgres Client](./assets/week1/week1-postgres-client.PNG)
+
 ## Homework Challenges
 
 - [x] Run the dockerfile CMD as an external script
