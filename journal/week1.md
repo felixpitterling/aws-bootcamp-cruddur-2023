@@ -70,12 +70,32 @@
 
   ![DockedHub command](./assets/week1/week1-dockerhub.PNG)
 
-- Docker locally
-  - Installed docker desktop (linke to webstie) https://www.docker.com/
-  - Adapted current docker-compose (link to file)
-  - Set env vars (example code `export env...`)
-  - Ran using docker vs code extension
-  - Add screenshot
+- [x] Use multi-stage building for a Dockerfile build
+
+  - [docker-compose file](./../docker-compose-multi-prod.yml)
+  - [dockerfile file](./../frontend-react-js/Dockerfile) (Code is commented out and at the bottom of the file)
+  - This task took be quite a long time however in the end I used this [guide](https://medium.com/geekculture/dockerizing-a-react-application-with-multi-stage-docker-build-4a5c6ca68166) as a guide. I used the docker multi stage builds feature to create a production build of the CRUDDUR frontend. The image size was reduce from 1.2GB to 24MB.
+  - I installed and used nginx as a webserver
+  - ![multi-stage-builds-docker](./assets/week1/week1-image-dev-prod.PNG)
+
+- [x] Implement a healthcheck
+
+- I used this [article](https://scoutapm.com/blog/how-to-use-docker-healthcheck) to learn and implement a healthcheck into the [frontend dockerfile](./../frontend-react-js/Dockerfile)
+
+- `HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1 `
+
+- [x] Install docker & serve CRUDDUR locally
+
+  - Installed Docker Desktop from their [homepage](https://www.docker.com/)
+  - Created a modified docker-compose file to things locally (ports, env var, ...)
+  - CRUDDUR running:
+
+- [x] <!-- - Docker locally
+                                    - Installed docker desktop (linke to webstie)
+                                    - Adapted current docker-compose (link to file)
+                                    - Set env vars (example code `export env...`)
+                                    - Ran using docker vs code extension
+                                    - Add screenshot -->
 
 ## Class Notes
 
@@ -209,3 +229,7 @@
 
 - Snyk Container
   - Get an overview of your containers and their security information
+
+```
+
+```
