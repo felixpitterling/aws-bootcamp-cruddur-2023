@@ -80,9 +80,9 @@
 
 - [x] Implement a healthcheck
 
-- I used this [article](https://scoutapm.com/blog/how-to-use-docker-healthcheck) to learn and implement a healthcheck into the [frontend dockerfile](./../frontend-react-js/Dockerfile)
+  - I used this [article](https://scoutapm.com/blog/how-to-use-docker-healthcheck) to learn and implement a healthcheck into the [frontend dockerfile](./../frontend-react-js/Dockerfile)
 
-- `HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1 `
+  - `HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1 `
 
 - [x] Install docker & serve CRUDDUR locally
 
