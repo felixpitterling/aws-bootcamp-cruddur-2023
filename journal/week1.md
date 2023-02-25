@@ -89,6 +89,15 @@
 
 - [x] Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
 
+  - After doing some research online I decided on a few best practicies to implement in the CRUDDUR docker files:
+    - [x] Keep your Dockerfile small (done above)
+    - [x] Use a .dockerignore file
+      - Added such file to both the [frontend](./../frontend-react-js/.dockerignore) and [backend](./../backend-flask/.dockerignore)
+    - [x] Use labels to add meta data to images
+      - `docker build -t backend-flask --label "description=contains backend for CRUDDUR app which uses Python + Flask" --label "maintaner=Felix Pitterling" ./backend-flask`
+      - `docker build -t frontend-react-js --label "description=contains frontend for CRUDDUR app which uses JavaScript + React" --label "maintaner=Felix Pitterling" ./frontend-react-js`
+    - Many other practicies, such as using env vars, had already been implemented
+
 - [x] Install docker & serve CRUDDUR locally
 
 - Installed Docker Desktop from their [homepage](https://www.docker.com/)
@@ -97,7 +106,7 @@
 - ![CRUDDUR locally served](./assets/week1/week1-local.PNG)
 
 - [x] Run Docker on an EC2 instance
-- After installing Docker on my EC2 instance and giving my user the the needed permissions I used this [hello world image](https://hub.docker.com/_/hello-world) from DockerHub to test things out.
+- After installing Docker on my EC2 instance and giving my user the needed permissions I used this [hello world image](https://hub.docker.com/_/hello-world) from DockerHub to test things out.
 - ![docker running on ec2](./assets/week1/week1-ec2.PNG)
 
 ## Class Notes

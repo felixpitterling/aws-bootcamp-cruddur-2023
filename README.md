@@ -3,18 +3,16 @@
 - Application: Cruddur
 - Cohort: 2023-A1
 
-
 ![Cruddur Screenshot](_docs/assets/cruddur-screenshot.png)
-
 
 ## Journaling Homework
 
 The `/journal` directory contains
 
 - [x] [Week 0](journal/week0.md)
-- [ ] [Week 1](journal/week1.md)
+- [x] [Week 1](journal/week1.md)
 - [ ] [Week 2](journal/week2.md)
-- [ ] [Week 3](journal/week3.md)
+- [  ] [Week 3](journal/week3.md)
 - [ ] [Week 4](journal/week4.md)
 - [ ] [Week 5](journal/week5.md)
 - [ ] [Week 6](journal/week6.md)
