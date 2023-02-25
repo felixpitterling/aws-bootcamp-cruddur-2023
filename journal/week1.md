@@ -242,15 +242,3 @@
 
 - Snyk Container
 - Get an overview of your containers and their security information
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
