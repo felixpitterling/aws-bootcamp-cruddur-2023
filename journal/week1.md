@@ -87,15 +87,9 @@
 - [x] Install docker & serve CRUDDUR locally
 
   - Installed Docker Desktop from their [homepage](https://www.docker.com/)
-  - Created a modified docker-compose file to things locally (ports, env var, ...)
+  - Created a modified [docker-compose](./../docker-compose-local.yml) file to things locally (ports, env var, ...)
   - CRUDDUR running:
-
-- [x] <!-- - Docker locally
-                                    - Installed docker desktop (linke to webstie)
-                                    - Adapted current docker-compose (link to file)
-                                    - Set env vars (example code `export env...`)
-                                    - Ran using docker vs code extension
-                                    - Add screenshot -->
+    - ![CRUDDUR locally served](./assets/week1/week1-local.PNG)
 
 ## Class Notes
 
