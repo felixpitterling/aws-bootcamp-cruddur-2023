@@ -32,11 +32,11 @@
 
 - [x] Write a Flask Backend Endpoint for Notifications
 
-  - ````@app.route("/api/activities/notifications", methods=['GET'])
+  - ```@app.route("/api/activities/notifications", methods=['GET'])
     def data_notifications():
     data = NotificationsActivities.run()
-    return data, 200```
-    ````
+    return data, 200
+    ```
   - Created route in [notifications_activities.py](./../backend-flask/services/notifications_activities.py) and implemented it in [`app.py`](./../backend-flask/app.py)
 
 - [x] Write a React Page for Notifications
@@ -82,14 +82,23 @@
 
   - I used this [article](https://scoutapm.com/blog/how-to-use-docker-healthcheck) to learn and implement a healthcheck into the [frontend dockerfile](./../frontend-react-js/Dockerfile)
 
-  - `HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1 `
+<!-- prettier-ignore -->
+  ```
+  HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
+```
+
+- [x] Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
 
 - [x] Install docker & serve CRUDDUR locally
 
-  - Installed Docker Desktop from their [homepage](https://www.docker.com/)
-  - Created a modified [docker-compose](./../docker-compose-local.yml) file to things locally (ports, env var, ...)
-  - CRUDDUR running:
-    - ![CRUDDUR locally served](./assets/week1/week1-local.PNG)
+- Installed Docker Desktop from their [homepage](https://www.docker.com/)
+- Created a modified [docker-compose](./../docker-compose-local.yml) file to things locally (ports, env vars, http vs https)
+- CRUDDUR running:
+- ![CRUDDUR locally served](./assets/week1/week1-local.PNG)
+
+- [x] Run Docker on an EC2 instance
+- After installing Docker on my EC2 instance and giving my user the the needed permissions I used this [hello world image](https://hub.docker.com/_/hello-world) from DockerHub to test things out.
+- ![docker running on ec2](./assets/week1/week1-ec2.PNG)
 
 ## Class Notes
 
@@ -97,9 +106,9 @@
 
 - Helps with working with different versions
 
-  - Operating Systems
-  - Node, Python, ... version
-  - Compiler versions
+- Operating Systems
+- Node, Python, ... version
+- Compiler versions
 
 - Containerization takes a little getting used to but after some time things become simple and natural
 
@@ -111,33 +120,33 @@
 
 - Docker uses a layered approach
 
-  - Host OS -> Container -> another OS
+- Host OS -> Container -> another OS
 
 - Host & guest (docker) operating system
 
 - `docker build -t  backend-flask ./backend-flask`
 
-  - `-t` flag is used to tag the resulting image with a given name and optionally a tag
-  - without any version tag, latest will be applied
+- `-t` flag is used to tag the resulting image with a given name and optionally a tag
+- without any version tag, latest will be applied
 
 - docker run
 
-  - `docker run --help`
-  - `docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask`
+- `docker run --help`
+- `docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask`
 
-    - From chatGPT:
+- From chatGPT:
 
-    - `--rm`: This flag tells Docker to automatically remove the container when it exits. This is useful to avoid leaving behind stopped containers that take up disk space.
+- `--rm`: This flag tells Docker to automatically remove the container when it exits. This is useful to avoid leaving behind stopped containers that take up disk space.
 
-    - `-p 4567:4567`: This flag maps the port 4567 of the container to the port 4567 on the host. This is necessary to allow traffic to reach the container's application.
+- `-p 4567:4567`: This flag maps the port 4567 of the container to the port 4567 on the host. This is necessary to allow traffic to reach the container's application.
 
-    - `-it`: This flag creates an interactive terminal inside the container and attaches it to the current terminal, so you can interact with the container's command line. It's often used with -d (detach) to start the container in the background.
+- `-it`: This flag creates an interactive terminal inside the container and attaches it to the current terminal, so you can interact with the container's command line. It's often used with -d (detach) to start the container in the background.
 
-    - `-e FRONTEND_URL='*'`: This flag sets an environment variable named FRONTEND_URL with a value of \*. This can be used by the containerized application to access the URL of the frontend service, which can be running in a separate container or on a different host.
+- `-e FRONTEND_URL='*'`: This flag sets an environment variable named FRONTEND_URL with a value of \*. This can be used by the containerized application to access the URL of the frontend service, which can be running in a separate container or on a different host.
 
-    - `-e BACKEND_URL='*'`: This flag sets an environment variable named BACKEND_URL with a value of \*. This can be used by the containerized application to access the URL of the backend service, which can be running in a separate container or on a different host.
+- `-e BACKEND_URL='*'`: This flag sets an environment variable named BACKEND_URL with a value of \*. This can be used by the containerized application to access the URL of the backend service, which can be running in a separate container or on a different host.
 
-    - `backend-flask`: This is the name of the Docker image to use when starting the container. It is required and should correspond to the image that was built with the docker build command.
+- `backend-flask`: This is the name of the Docker image to use when starting the container. It is required and should correspond to the image that was built with the docker build command.
 
 - Container information: `docker ps` & `docker images`
 
@@ -147,82 +156,91 @@
 
 - GitPod
 
-  - 50 hours / month
-  - 4 cores, 8GM RAM & 30GB storage
-  - Best to run only one instance at a time
-  - Calculator in gitpod.io is very useful
-  - Instances stop automatically after 30 minutes
+- 50 hours / month
+- 4 cores, 8GM RAM & 30GB storage
+- Best to run only one instance at a time
+- Calculator in gitpod.io is very useful
+- Instances stop automatically after 30 minutes
 
 - GitHub Codespaces
 
-  - 60 hours / month free on low settings (2 cores)
+- 60 hours / month free on low settings (2 cores)
 
 - AWS Cloud9
 
-  - Uses EC2 (t2.micro instance)
-  - Uses up EC2 free tier resources
-  - Best to avoid since only one EC2 instance can run on free tier
+- Uses EC2 (t2.micro instance)
+- Uses up EC2 free tier resources
+- Best to avoid since only one EC2 instance can run on free tier
 
 - CloudTrail
-  - Be careful with setting cloudtrail or avoid completely
-    - Unselect SSE-KMS encryption
-    - Only log management events
-  - Still does 90-day review automatically
+- Be careful with setting cloudtrail or avoid completely
+- Unselect SSE-KMS encryption
+- Only log management events
+- Still does 90-day review automatically
 
 ### _3. [NOT LIVE] Security Considerations: Top 10 Docker Container Security Best Practices (with Ashish Rajan)_
 
 - Container security: practice of protecting your applications hosted on compute services (or locally)
 - Container first strategy
-  - No special requirements for running code
+- No special requirements for running code
 - Managed Container Service: AWS ECS, AWS EKS
 - Un-Managed requires more resources to run (android vs iPhone comparison)
 
 - Doctor Components
 
-  - Docker Client (Build, Pull, Run features)
-  - ↓ REST API ↓
-  - Docher Server
-    - Docker Daemon (Docker Host)
-      - Containers
-    - Registry (private or public)
-      - Images
+- Docker Client (Build, Pull, Run features)
+- ↓ REST API ↓
+- Docher Server
+- Docker Daemon (Docker Host)
+- Containers
+- Registry (private or public)
+
+- Images
 
 - Container Security Components Considerations
 
-  - Docker & Host Configuration
-  - Securing images
-  - Secret management
-  - Monitoring Containers
-  - Data security
-  - ...
+- Docker & Host Configuration
+- Securing images
+- Secret management
+- Monitoring Containers
+- Data security
+- ...
 
 - **Top 10 Practices**
 
-  1. Keep host, docker updated
-  2. Docker daemon & containers should run in non-root user mode
-  3. Image Vulnerability Scanning
-  4. Trusting a private vs public image registry
-  5. No sensitive data in docker files or images
-  6. Use secret management services
-  7. Read only fs and volume for docker
-  8. separate databases for long term storage
-  9. Use DevSecOps practices while building application security
-  10. Test code for vulnerabilities before production (including any dependencies)
+1. Keep host, docker updated
+2. Docker daemon & containers should run in non-root user mode
+3. Image Vulnerability Scanning
+4. Trusting a private vs public image registry
+5. No sensitive data in docker files or images
+6. Use secret management services
+7. Read only fs and volume for docker
+8. separate databases for long term storage
+9. Use DevSecOps practices while building application security
+10. Test code for vulnerabilities before production (including any dependencies)
 
 - Snyk OpenSource Security to identify docker compose vulnerabilities
 
 - AWS Secret Manager
 
-  - Alternative: Hashicorp Vault (use AWS library underneath)
-  - $0.4/months/secret
+- Alternative: Hashicorp Vault (use AWS library underneath)
+- $0.4/months/secret
 
 - AWS Inspector
 
-  - Alternative: Clair
-  - Used to secure images
+- Alternative: Clair
+- Used to secure images
 
 - Snyk Container
-  - Get an overview of your containers and their security information
+- Get an overview of your containers and their security information
+
+```
+
+```
+
+```
+
+```
 
 ```
 
