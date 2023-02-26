@@ -28,3 +28,11 @@
 - Heat map for latecny is the preffered tool
 - Root spans contain only single calls
 
+### _2. [NOT LIVE] Instrument XRay_
+
+- AWS Observability Tool
+  - Works best with lamda and serverless services
+- Requires a daemon (not required in Honeycomb)
+- Middleware is software for web applications that sits in between the client and your application (server)
+  - Can handle authentication (white/black lists)
+  - Make sure files are in the correct format and do not exceed a size limit
