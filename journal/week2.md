@@ -25,6 +25,6 @@
 - Instrumentation is the code that send the traces
 - Observability tools: Tracing, Logging, Metrcis
 - OTEL Standard & Cloud Native Foundation
-
-
+- Heat map for latecny is the preffered tool
+- Root spans contain only single calls
 
