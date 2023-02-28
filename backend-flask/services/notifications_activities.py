@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
 
-tracer = trace.get_tracer("home.notifications")
+tracer = trace.get_tracer("notifications.activities")
 
 class NotificationsActivities:
   def run():
@@ -37,6 +37,6 @@ class NotificationsActivities:
       },
       ]
 
-    span.set_attribute("app.notification_length", len(results))
+      span.set_attribute("app.notification_length", len(results))
 
     return results
