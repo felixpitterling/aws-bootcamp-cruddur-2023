@@ -33,6 +33,7 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 # from time import strftime
 
 # Rollbar -------------
+from time import strftime
 import os
 import rollbar
 import rollbar.contrib.flask
