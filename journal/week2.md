@@ -2,7 +2,18 @@
 
 ## Homework
 
+- [x] Instrument Honeycomb with OTEL
+- [x] Instrument AWS X-Ray
+- [x] Configure custom logger to send to CloudWatch Logs
+- [x] Integrate Rollbar and capture and error  
+
 ## Homework Challenges
+
+- [x] Instrument Honeycomb for the frontend-application to observe network latency between frontend and backend
+
+- [] Add custom instrumentation to Honeycomb using a new span to add more attributes
+
+- [] Run custom queries in Honeycomb and save them later
 
 ## Class Notes
 
