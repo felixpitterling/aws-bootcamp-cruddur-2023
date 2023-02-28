@@ -8,6 +8,7 @@ class HomeActivities:
   # def run(logger):
   def run():
 
+
     # logger.info("Home Activities")
     
     with tracer.start_as_current_span("home-activities-mock-data"):
