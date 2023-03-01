@@ -6,60 +6,60 @@
 
 [Lucid Diagram Link](https://lucid.app/lucidchart/94ba19ca-dc63-4646-8aa5-59c6bd457592/edit?viewport_loc=-820%2C-442%2C3328%2C1598%2C0_0&invitationId=inv_cf5a0d28-eb97-4ab7-bf44-097bb0c41a65)
 
-![Conceptual Diagram in Lucid](./assets/week0-conceptual-diagram.PNG)
+![Conceptual Diagram in Lucid](./assets/week0/week0-conceptual-diagram.PNG)
 
 - [x] Logical Architectual Diagram
 
 [Lucid Diagram Link](https://lucid.app/lucidchart/779c8a31-bc89-4566-866e-d867c623207c/edit?viewport_loc=33%2C214%2C3138%2C1335%2C0_0&invitationId=inv_20c78894-3f2d-4032-95e8-e4eea91db021)
 
-![Logical Diagram in Lucid](./assets/week0-logical-diagram.png)
+![Logical Diagram in Lucid](./assets/week0/week0-logical-diagram.png)
 
 - [x] Create an Admin User
 - [x] Use CloudShell
 
 - [x] Generate AWS Credentials
 
-![AWS Dashboard](./assets/week0-credentials.PNG)
+![AWS Dashboard](./assets/week0/week0-credentials.PNG)
 
 - [x] Installed AWS CLI
 
 [Gitpod Yaml File](../.gitpod.yml)
 
-![Identity check in gitpod](./assets/week0-cli.PNG)
+![Identity check in gitpod](./assets/week0/week0-cli.PNG)
 
 - [x] Create a Budget
 
 [budget.json](../aws/json/budget.json),
 [budget-notifications-with-subscribers.json](../aws/json/budget-notifications-with-subscribers.json)
 
-![Budgets Dashboard](./assets/week0-budget.PNG)
+![Budgets Dashboard](./assets/week0/week0-budget.PNG)
 
 - [x] Create a Billing Alarm
 
 [alarm_config.json](../aws/json/alarm_config.json)
 
-![CloudWatch Dashboard](./assets/week0-alarm.PNG)
+![CloudWatch Dashboard](./assets/week0/week0-alarm.PNG)
 
 ## Homework Challenges
 
 - [x] Destroy your root account credentials, Set MFA, IAM role
 
-![Destroyed root account access](./assets/week0-rootcredentials.PNG)
+![Destroyed root account access](./assets/week0/week0-rootcredentials.PNG)
 
-![MFA for admin and root accounts](./assets/week0-MFA.PNG)
+![MFA for admin and root accounts](./assets/week0/week0-MFA.PNG)
 
-![Example role allowing EC2 to call services on my behalf](./assets/week0-role.PNG)
+![Example role allowing EC2 to call services on my behalf](./assets/week0/week0-role.PNG)
 
 - [x] Use EventBridge to hookup Health Dashboard to SNS and send notification when there is a service health issue.
 
-![Event bridge overview](./assets/week0-healthSNS.PNG)
-![Event bridge target](./assets/week0-healthSNS-target.PNG)
+![Event bridge overview](./assets/week0/week0-healthSNS.PNG)
+![Event bridge target](./assets/week0/week0-healthSNS-target.PNG)
 
 - [x] Review all the questions of each pillars in the Well Architected Tool
 
   For this task I read through all questions while considering our CRUDDUR
 
-  ![Well-Architected Tool](./assets/week0-wa-tool.PNG)
+  ![Well-Architected Tool](./assets/week0/week0-wa-tool.PNG)
 
 - [x] Architectural diagram with CI/CD logical pipeline
 
@@ -67,12 +67,12 @@ I was not really sure how to create the diagram. I came up with this after looki
 
 [Lucid Diagram Link](https://lucid.app/lucidchart/53265279-5521-47bf-a6d1-b1157e158958/edit?viewport_loc=-1684%2C-543%2C5060%2C2617%2C0_0&invitationId=inv_d5cffe8d-bf8d-45d3-8ae0-ceaa8f6e90f1)
 
-![CI/CD Pipeline Diagram](./assets/week0-cicd.png)
+![CI/CD Pipeline Diagram](./assets/week0/week0-cicd.png)
 
 
 - [x] Research the technical and service limits of specific services
 
-![Support Ticket](./assets/week0-ticket.PNG)
+![Support Ticket](./assets/week0/week0-ticket.PNG)
 
 ## Class Notes
 

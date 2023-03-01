@@ -3,17 +3,57 @@
 ## Homework
 
 - [x] Instrument Honeycomb with OTEL
+  - For this task I first installed all relevant opentelemetry dependencies by adding to the [requirements.txt](./../backend-flask/requirements.txt) file
+
+  - I then added the instrumentation code to the backend in the [app.py](./../backend-flask/app.py) file
+  
+  - I also added the needed env vars into the backend container in the [docker-compose](./../docker-compose.yml) file
+  - Honeycomb site showing a trace:
+  - ![Honeycomb Home](./assets/week2/week2-honecomb-home.PNG)
+
 - [x] Instrument AWS X-Ray
+  - For this task I first installed `aws-xray-sdk` by adding to the [requirements.txt](./../backend-flask/requirements.txt) file
+
+  - I then added the instrumentation code to the backend in the [app.py](./../backend-flask/app.py) and [user_activity.py](./../backend-flask/services/user_activities.py) files
+
+  - X-Ray Dashboard:
+  - ![X-Ray Dashboard](./assets/week2/week2-xray.PNG)
+  - ![X-Ray Trace](./assets/week2/week2-xray-trace.PNG)
+
+
 - [x] Configure custom logger to send to CloudWatch Logs
-- [x] Integrate Rollbar and capture and error  
+    - For this task I first installed `watchtower` by adding to the [requirements.txt](./../backend-flask/requirements.txt) file
+    - I then added the instrumentation code to the backend in the [app.py](./../backend-flask/app.py) and [home_activity.py](./../backend-flask/services/home_activities.py) files
+    - Logs from the backend:
+    - ![CloudWatch Logs](./assets/week2/week2-cloudwatch.PNG)
+  
+- [x] Integrate Rollbar and capture an error
+    - For this task I first installed `blinker` and `rollbar` by adding them to the [requirements.txt](./../backend-flask/requirements.txt) file
+    - I then added the instrumentation code to the backend in the [app.py](./../backend-flask/app.py) file
+    - Testing Rollbar by creating error in backend:
+    - ![Rollbar Testing](./assets/week2/week2-rollbar.PNG)
 
 ## Homework Challenges
 
 - [x] Instrument Honeycomb for the frontend-application to observe network latency between frontend and backend
+    - For this task I followed the offical Honeycomb documentation on [Instrumenting Browser JavaScript Apps](https://docs.honeycomb.io/getting-data-in/opentelemetry/browser-js/) as well as some Google along the way. 
+    - I installed all relevant opentelemetry dependencies using npm in the frontend folder
+    - I then created the [tracing.js](./../frontend-react-js/src/tracing.js) file to configure direct access to Honeycomb (avoids the need for an OpenTelemetry Collector) and imported it into [index.js](./../frontend-react-js/src/index.js) so that the file is called automatically 
+    - To test the setup so far I created the page [TestPage.js](./../frontend-react-js/pages/../src/pages/TestPage.js) which uses a span and an onload function to create a trace:
+    - ![onload honeycomb](./assets/week2/week2-honecomb-onload.PNG)
+    - To create automatic tracing I used the `@opentelemetry/auto-instrumentations-web` package and added the required code along with the needed backend URL to [tracing.js](./../frontend-react-js/src/tracing.js) as well 
+    - Finally I used Honeycomb's query feature to display both the frontend and backend when visting the home page for example:
+    - ![get honeycomb](./assets/week2/week2-honecomb-httpget.PNG)
 
-- [] Add custom instrumentation to Honeycomb using a new span to add more attributes
+- [x] Add custom instrumentation to Honeycomb using a new span to add more attributes
+  - I added a user_id (hard coded for now) and notification_length attribute to a custom span inside [notifications_activities.py](./../backend-flask/services/notifications_activities.py)
+  - ![custom attributes honeycomb](./assets/week2/week2-custom-attributes.PNG)
 
-- [] Run custom queries in Honeycomb and save them later
+- [x] Run custom queries in Honeycomb and save them later:
+  - Average latency of each user:
+  - ![query 1](./assets/week2/week2-query-latency.PNG)
+  - Number of notifications of each user:
+  - ![query 2](./assets/week2/week2-query-notifications.PNG)
 
 ## Class Notes
 
