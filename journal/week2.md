@@ -175,8 +175,22 @@
 
 - Event Driven Security
   - using Amazon EventBridge and AWS Security Hub
-  - severless 
+  - severless
 
+
+### _3. [NOT LIVE] Spend Considerations: Honeycomb, Rollbar, AWS X-Ray and AWS Cloudwatc (with Chirag Nayyar)_
+
+1. Honeycomb (Tracing)
+     - 20 million events / month 
+2. Rollbar (Error Logging)
+     - 5000 error events / month 
+     - 30 day retention
+3. AWS X-Ray
+     - 100 thousand traces / month
+4. AWS Cloudwatch Logs
+     - 10 custom metrics and alarms 
+     - Can get very expensive  
+  
 
 
 
