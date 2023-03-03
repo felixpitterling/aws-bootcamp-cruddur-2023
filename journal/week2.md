@@ -7,7 +7,7 @@
 
   - I then added the instrumentation code to the backend in the [app.py](./../backend-flask/app.py) file
   
-  - I also added the needed env vars into the backend container in the [docker-compose](./../docker-compose.yml) file
+  - I also added the needed env vars to the backend container in the [docker-compose](./../docker-compose.yml) file
   - Honeycomb site showing a trace:
   - ![Honeycomb Home](./assets/week2/week2-honecomb-home.PNG)
 
