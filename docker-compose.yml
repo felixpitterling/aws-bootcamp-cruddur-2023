@@ -24,11 +24,11 @@ services:
       OTEL_SERVICE_NAME: "frontend-react-js"
       OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
       OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team:${HONEYCOMB_API_KEY}"
-      REACT_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
+      REACT_APP_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
       # REACT_APP_AWS_COGNITO_IDENTITY_POOL_ID: ""
       REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
       REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_fGBdOdBVc"
-      REACT_APP_CLIENT_ID: ""
+      REACT_APP_CLIENT_ID: "6730mievoaj0f9s2lnjsvlee66"
     build: ./frontend-react-js
     ports:
       - "3000:3000"
