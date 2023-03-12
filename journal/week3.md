@@ -1,6 +1,6 @@
 # Week 3 — Decentralized Authentication
 
-
+https://docs.amplify.aws/lib/auth/mfa/q/platform/js/
 ## Class Notes
 
 ### _1. [LIVE] Decentralized Authenication Overview_

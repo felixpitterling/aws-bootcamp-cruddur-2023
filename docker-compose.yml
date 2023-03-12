@@ -13,8 +13,10 @@ services:
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
       AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
-      AWS_COGNITO_USER_POOL_ID: "eu-central-1_BQOG074Vy"
-      AWS_COGNITO_USER_POOL_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
+      AWS_COGNITO_USER_POOL_ID: "eu-central-1_R5PkVWLBN"
+      AWS_COGNITO_USER_POOL_CLIENT_ID: "34capmvbd6erd7r1r7fqismpai"
+      # AWS_COGNITO_USER_POOL_ID: "eu-central-1_BQOG074Vy"
+      # AWS_COGNITO_USER_POOL_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
       ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
     build: ./backend-flask
     ports:
@@ -30,8 +32,10 @@ services:
       REACT_APP_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
       # REACT_APP_AWS_COGNITO_IDENTITY_POOL_ID: ""
       REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
-      REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_BQOG074Vy"
-      REACT_APP_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
+      REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_R5PkVWLBN"
+      REACT_APP_CLIENT_ID: "34capmvbd6erd7r1r7fqismpai"
+      # REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_BQOG074Vy"
+      # REACT_APP_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
     build: ./frontend-react-js
     ports:
       - "3000:3000"
