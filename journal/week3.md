@@ -122,4 +122,37 @@
 
 - JWTs use a specific protocol and are encoded 
 
+### _3. [NOT LIVE] Security Considerations: Amazon Cognito Security Best Practices_
+
+1. SAML/Single Sign On & Identity Provider
+2. OpenID Connect
+3. OAuth
+    - Works together with OpenID and takes care of the authentication
+    - Signin using credentials of another platform (GitHub, Google, ...)
+
+- DeCentralized Authentication
+- Amazon Cognito
+  - User directory for customers that stores username, password, ...
+  - Identity pool provides access to AWS services 
+
+- User Lifecycle Management
+  - Onboarding
+  - Access and requirements can change
+  - Offboarding
+
+- Token Lifecycle Management
+
+- Security Best Practices
+  - AWS:
+    - AWS WAF with Web ACLs for Rate limiting & Allow/Deny Lists
+    - Follow compliance standards
+    - Consider regions 
+    - AWS CloudTrail to monitor malicious Cognito behaviour
+
+  - Application:
+    - Use industry auth standards (SAML, OpenID Connect, ...)
+    - User & Token Access Lifecycle Management
+    - Limited Access Token Scope
+    - Encryption in transit for API Calls
+
 
