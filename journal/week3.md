@@ -1,35 +1,6 @@
 # Week 3 — Decentralized Authentication
 
 
-## Homework Challenges
-
-- [x] Setup JWT Authentication in app.py
-  - Folled AB's video [Congito JWT Server side Verify](https://www.youtube.com/watch?v=d079jccoG-M)
-  - Created the [cognito_jwt_token.py](./../backend-flask/lib/cognito_jwt_token.py) file and added all the required functions
-  - Integrated [cognito_jwt_token.py](./../backend-flask/lib/cognito_jwt_token.py) into [app.py](./../backend-flask/app.py)
-    - ```
-      cognito_jwt_token = CognitoJwtToken(
-        user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
-        user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
-        region=os.getenv("AWS_DEFAULT_REGION")
-      )
-      ```
-  - Added an extra mock data entry to [home_activities.py](./../backend-flask/services/home_activities.py) which is returned when logged in
-    - Conditional logic:
-      - ```
-        if cognito_user_id != None:
-          extra_crud = {
-            ...
-          }
-        ```
-    - Screenshot showing extra mock data:
-        - ![extra mock data](./assets/week3/week3-extra-data.PNG)
-    
-- [x] Setup JWT Authentication using middleware
- 
-- [x] Setup MFA with Google Auth App
-  - Follwed the guide [Multi-factor authentication](https://docs.amplify.aws/lib/auth/mfa/q/platform/js/) by Amplify Dev Center
-
 ## Homework
 
 - [x] Setup Cognito User Pool
@@ -81,6 +52,44 @@
       ```
 - [x] Watch about different approaches to verifying JWTs
   - I took notes in the **Class Notes**  section below
+
+## Homework Challenges
+
+- [x] Setup JWT Authentication in app.py
+  - Folled AB's video [Congito JWT Server side Verify](https://www.youtube.com/watch?v=d079jccoG-M)
+  - Created the [cognito_jwt_token.py](./../backend-flask/lib/cognito_jwt_token.py) file and added all the required functions
+  - Integrated [cognito_jwt_token.py](./../backend-flask/lib/cognito_jwt_token.py) into [app.py](./../backend-flask/app.py)
+    - ```
+      cognito_jwt_token = CognitoJwtToken(
+        user_pool_id=os.getenv("AWS_COGNITO_USER_POOL_ID"), 
+        user_pool_client_id=os.getenv("AWS_COGNITO_USER_POOL_CLIENT_ID"),
+        region=os.getenv("AWS_DEFAULT_REGION")
+      )
+      ```
+  - Added an extra mock data entry to [home_activities.py](./../backend-flask/services/home_activities.py) which is returned when logged in
+    - Conditional logic:
+      - ```
+        if cognito_user_id != None:
+          extra_crud = {
+            ...
+          }
+        ```
+    - Screenshot showing extra mock data:
+        - ![extra mock data](./assets/week3/week3-extra-data.PNG)
+    
+<!-- - [x] Setup JWT Authentication using middleware -->
+ 
+- [x] Setup MFA with Google Auth App
+  - I follwed the guide [Multi-factor authentication](https://docs.amplify.aws/lib/auth/mfa/q/platform/js/) by Amplify Dev Center
+  - Created a user-pool with MFA enabled:
+    - ![MFA Userpool](./assets/week3/week3-user-pool-mfa.PNG)
+  - Made adjustments to the [SinginPage.js](./../frontend-react-js/src/pages/SigninPage.js) (commented out) 
+  - The first time a user attempts to login they will be promted with a QR-Code. After they successfully entered the code from the Google Authenticator app, MFA is enabled:
+    - ![MFA login](./assets/week3/week3-mfa.PNG)
+  - Afterwards, no new QR-Code will be shown for security reasons 
+  - Overall the process is a little buggy. For example, after adding the QR-Code for the first time, the signin page has to be reloaded. 
+
+
 
 
 
