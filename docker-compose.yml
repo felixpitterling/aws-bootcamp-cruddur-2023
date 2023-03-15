@@ -20,8 +20,8 @@ services:
       AWS_COGNITO_USER_POOL_ID: "eu-central-1_BQOG074Vy"
       AWS_COGNITO_USER_POOL_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
       ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
-      # CONNECTION_URL: "${PROD_CONNECTION_URL}"
-      CONNECTION_URL: "postgresql://postgres:password@db:5432/cruddur"
+      CONNECTION_URL: "${PROD_CONNECTION_URL}"
+      # CONNECTION_URL: "postgresql://postgres:password@db:5432/cruddur"
 
     build: ./backend-flask
     ports:
