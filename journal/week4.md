@@ -81,4 +81,25 @@
 
 ### _3. [NOT LIVE] Security Considerations: Securing Your Amazon RDS Postgres Database_
 
+  - Business use-case: RDS Postgres for Web application
+  - SQL (ex: MySQL) vs NoSQL (ex: DocumentDB)
+    - SQL uses rows and columns, NoSQL is more disconnected
+  - Make sure the region is the same as the one which your users are in
+  - Master username & password should be secure
+  - Encryption should always be enabled 
+  - Inbound and outbound rules
+  - Best Practicies
+    - Server-Side:
+      1. Use VPCs
+      2. Use compliance standards
+      3. Region compliance
+      4. Amazon Organizations SCP - Protects against unwanted deletions
+      5. AWS CloudTrail is enabled & alerts are setup
+      6. Amazon GuardDuty enabled
+    - Client-Side
+      1. Use IAM authentication, AWS KSM
+      2. Encryption in transit and at rest
+      3. Security group should be restricted to only known IPs
+      4. RDS should not be internet accessible
+  
   
