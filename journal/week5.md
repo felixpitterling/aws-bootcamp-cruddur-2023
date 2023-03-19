@@ -25,6 +25,8 @@
 - GSI & LSI:
   - Allows users to query data using an alternate key instead of the primary key
   - LSI vs GSI: The main difference between GSI and LSI is that GSI can be created on any attribute (and hence can be non-unique, get-item does not work) in a table, while LSI can only be created on attributes that are part of the table's sort key. 
-
+- UUIDs are not always the best choice for a sort key
+  - Rather check the data "you have on hand" 
+- PK (Primary Key) / SK (Sort Key) Pattern
 
 
