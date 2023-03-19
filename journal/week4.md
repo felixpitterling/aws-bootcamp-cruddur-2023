@@ -79,7 +79,7 @@
 
 ## Class Notes
 
-### _3. [NOT LIVE] Security Considerations: Securing Your Amazon RDS Postgres Database_
+### _1. [NOT LIVE] Security Considerations: Securing Your Amazon RDS Postgres Database_
 
   - Business use-case: RDS Postgres for Web application
   - SQL (ex: MySQL) vs NoSQL (ex: DocumentDB)
