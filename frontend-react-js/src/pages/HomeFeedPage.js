@@ -1,17 +1,12 @@
 import './HomeFeedPage.css';
 import React from "react";
 
-
-import DesktopNavigation from '../components/DesktopNavigation';
-import DesktopSidebar from '../components/DesktopSidebar';
+import DesktopNavigation  from '../components/DesktopNavigation';
+import DesktopSidebar     from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
-
-// [TODO] Authenication
-// import Cookies from 'js-cookie'
-// import { Auth } from 'aws-amplify';
-import checkAuth from '../lib/CheckAuth'
+import checkAuth from '../lib/CheckAuth';
 
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);
@@ -20,7 +15,6 @@ export default function HomeFeedPage() {
   const [replyActivity, setReplyActivity] = React.useState({});
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
-
 
   const loadData = async () => {
     try {
@@ -43,8 +37,8 @@ export default function HomeFeedPage() {
   };
 
 
-
-  React.useEffect(() => {
+  
+  React.useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -57,23 +51,23 @@ export default function HomeFeedPage() {
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
       <div className='content'>
-        <ActivityForm
+        <ActivityForm  
           popped={popped}
-          setPopped={setPopped}
-          setActivities={setActivities}
+          setPopped={setPopped} 
+          setActivities={setActivities} 
         />
-        <ReplyForm
-          activity={replyActivity}
-          popped={poppedReply}
-          setPopped={setPoppedReply}
-          setActivities={setActivities}
-          activities={activities}
+        <ReplyForm 
+          activity={replyActivity} 
+          popped={poppedReply} 
+          setPopped={setPoppedReply} 
+          setActivities={setActivities} 
+          activities={activities} 
         />
-        <ActivityFeed
-          title="Home"
-          setReplyActivity={setReplyActivity}
-          setPopped={setPoppedReply}
-          activities={activities}
+        <ActivityFeed 
+          title="Home" 
+          setReplyActivity={setReplyActivity} 
+          setPopped={setPoppedReply} 
+          activities={activities} 
         />
       </div>
       <DesktopSidebar user={user} />
