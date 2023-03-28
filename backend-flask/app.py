@@ -192,6 +192,8 @@ def data_messages(message_group_uuid):
 @app.route("/api/messages", methods=['POST', 'OPTIONS'])
 @cross_origin()
 def data_create_message():
+    app.logger.debug("-------Message------")
+    app.logger.debug("-------Message------")
     message_group_uuid = request.json.get('message_group_uuid', None)
     user_receiver_handle = request.json.get('handle', None)
     message = request.json['message']
@@ -211,6 +213,8 @@ def data_create_message():
                 user_receiver_handle=user_receiver_handle
             )
         else:
+            app.logger.debug("-------Message------1")
+            app.logger.debug("-------Message------1")
             # Push onto existing Message Group
             model = CreateMessage.run(
                 mode="update",
