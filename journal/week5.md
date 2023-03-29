@@ -29,4 +29,21 @@
   - Rather check the data "you have on hand" 
 - PK (Primary Key) / SK (Sort Key) Pattern
 
+### _2. [NOT LIVE] Security Considerations:  Amazon DynamoDB for security and speed_
+
+- AWS Side
+  - Use VPC Endpoints
+  - DynamoDB should only be used in the AWS region that you are legally allowed to be holding user data in
+  - Amazon Organizations SCP - to manage delection, creation, ...
+  - AWS CloudTrail is enabled
+- Client Side
+  - Use appropriate Authentication
+  - Lifecycle management
+  - IAM roles
+  - DAX Service (IAM) Role to have read only access
+  - Not internet access (instead VPC Endpoints)
+  - Site to site VPN or direct connect for on-promise access
+  - Client side encryption is recommended
+
+
 
