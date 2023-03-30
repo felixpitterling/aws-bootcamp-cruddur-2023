@@ -30,13 +30,13 @@
 
 - [x] Bash scripting for common database actions
   - I created the following bash scripts:
-    1. [db-connect](./../backend-flask/bin/db-connect)
-    2. [db-create](./../backend-flask/bin/db-create)
-    3. [db-drop](./../backend-flask/bin/db-drop)
-    4. [db-schema-load](./../backend-flask/bin/db-schema-load)
-    5. [db-seed](./../backend-flask/bin/db-seed)
-    6. [db-sessions](./../backend-flask/bin/db-sessions)
-    6. [db-setup](./../backend-flask/bin/db-setup)
+    1. [db-connect](./../backend-flask/bin/db/connect)
+    2. [db-create](./../backend-flask/bin/db/create)
+    3. [db-drop](./../backend-flask/bin/db/drop)
+    4. [db-schema-load](./../backend-flask/bin/db/schema-load)
+    5. [db-seed](./../backend-flask/bin/db/seed)
+    6. [db-sessions](./../backend-flask/bin/db/sessions)
+    6. [db-setup](./../backend-flask/bin/db/setup)
 
 - [x] Install Postgres Driver in Backend Application
   - Added the `CONNECTION_URL` environment variable to [docker-compose.yml](./../docker-compose.yml)
@@ -44,10 +44,10 @@
   - Added `psycopg` dependency to the backend in the [requirements.txt](./../backend-flask/requirements.txt) file and installed it using the command `pip install -r requirements.txt`
 
 - [x] Connect Gitpod to RDS Instance
-  - I first created the file [rds-update-sg-rule](./../backend-flask/bin/rds-update-sg-rule) which uses the command `aws ec2 modify-security-group-rules` to update the inbound rules of the default secuirty group such 
+  - I first created the file [rds-update-sg-rule](./../backend-flask/bin/rds/update-sg-rule) which uses the command `aws ec2 modify-security-group-rules` to update the inbound rules of the default secuirty group such 
   that the IP address of the current Gitpod instance is allowed
   - That script was also added to the gitpod.yml so that it is started automatically
-  - In the screenshot below I used the [db-connect](./../backend-flask/bin/db-connect) script to connect to the RDS Postgres instance. The script uses Psql in the background which is a interactive terminal for working with Postgres:
+  - In the screenshot below I used the [db-connect](./../backend-flask/bin/db/connect) script to connect to the RDS Postgres instance. The script uses Psql in the background which is a interactive terminal for working with Postgres:
     - ![db-connect prod](./assets/week4/week4-db-connect.PNG)
 
 - [x] Create Cognito Trigger to insert user into database
