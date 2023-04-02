@@ -44,8 +44,8 @@
         {"name": "OTEL_EXPORTER_OTLP_ENDPOINT", "value": "https://api.honeycomb.io"},
         {"name": "AWS_COGNITO_USER_POOL_ID", "value": "eu-central-1_BQOG074Vy"},
         {"name": "AWS_COGNITO_USER_POOL_CLIENT_ID", "value": "6di0cmdrtnvsgeljjltmi9l4er"},
-        {"name": "FRONTEND_URL", "value": "*"},
-        {"name": "BACKEND_URL", "value": "*"},
+        {"name": "FRONTEND_URL", "value": "felix-cloudcamp.com"},
+        {"name": "BACKEND_URL", "value": "api.felix-cloudcamp.com"},
         {"name": "AWS_DEFAULT_REGION", "value": "eu-central-1"}
       ],
       "secrets": [
