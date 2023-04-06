@@ -1,28 +1,8 @@
 version: "3.8"
 services:
   backend-flask:
-    environment:
-      FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
-      BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" 
-      OTEL_SERVICE_NAME: "backend-flask"
-      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
-      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
-      AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
-      AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
-      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
-      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
-      AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
-      AWS_ACCOUNT_ID: "${AWS_ACCOUNT_ID}"
-      # AWS_COGNITO_USER_POOL_ID: "eu-central-1_R5PkVWLBN"
-      # AWS_COGNITO_USER_POOL_CLIENT_ID: "34capmvbd6erd7r1r7fqismpai"
-      AWS_COGNITO_USER_POOL_ID: "eu-central-1_BQOG074Vy"
-      AWS_COGNITO_USER_POOL_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
-      ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
-      # CONNECTION_URL: "${PROD_CONNECTION_URL}"
-      CONNECTION_URL: "postgresql://postgres:password@db:5432/cruddur"
-      # CONNECTION_URL: "postgresql://postgres:password@localhost:5432/cruddur"
-      # AWS_ENDPOINT_URL: "http://dynamodb-local:8000"
-
+    env_file:
+      - backend-flask.env 
     build: ./backend-flask
     ports:
       - "4567:4567"
