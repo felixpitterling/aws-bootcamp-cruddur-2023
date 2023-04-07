@@ -2,7 +2,7 @@ version: "3.8"
 services:
   backend-flask:
     env_file:
-      - .env.backend-flask
+      - backend-flask.env
     build: ./backend-flask
     ports:
       - "4567:4567"
@@ -11,18 +11,8 @@ services:
     networks:
       - cruddur-net
   frontend-react-js:
-    environment:
-      REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
-      OTEL_SERVICE_NAME: "frontend-react-js"
-      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
-      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team:${HONEYCOMB_API_KEY}"
-      REACT_APP_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
-      # REACT_APP_AWS_COGNITO_IDENTITY_POOL_ID: ""
-      REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
-      # REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_R5PkVWLBN"
-      # REACT_APP_CLIENT_ID: "34capmvbd6erd7r1r7fqismpai"
-      REACT_APP_AWS_USER_POOLS_ID: "eu-central-1_BQOG074Vy"
-      REACT_APP_CLIENT_ID: "6di0cmdrtnvsgeljjltmi9l4er"
+    env_file:
+      - frontend-react-js.env
     build: ./frontend-react-js
     ports:
       - "3000:3000"
