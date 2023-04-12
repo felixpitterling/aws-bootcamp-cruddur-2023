@@ -2,9 +2,11 @@
 
 ## Homework
 
-- [] Watch ECS Security by Ashish 
+- [x] Watch ECS Security by Ashish
+  - Check the notes at the bottom for evidence 
+
 - [x] Watch Fargate Technical Questions with Maish
-  - I watched the week 7 live class as well as the interview with Maish
+  - I watched the week 6 & 7 live classes as well as the interview with Maish
   
 - [x] Provision ECS Cluster
   - I provisioned the ECS Cluster with the command:
@@ -66,7 +68,12 @@
 - [x] Create an SSL cerificate via ACM & setup records for the naked domain (frontend) & api subdomain (backend)
   - ![SSL](./assets/week6/week6-ssl.PNG)
 
-- [] Configure CORS to only permit traffic from our domain 
+- [x] Configure CORS to only permit traffic from our domain
+  - Added the following code to [backend-flask.json](./../aws/task-definitions/backend-flask.json)
+  - ```json
+    {"name": "FRONTEND_URL", "value": "https://felix-cloudcamp.com"},
+    {"name": "BACKEND_URL", "value": "https://api.felix-cloudcamp.com"},
+    ```
   
 - [x] Secure Flask by not running in debug mode
   - To run the backend in debug mode, a new [Dockerfile.prod](./../backend-flask/Dockerfile.prod) was created. Most importantly the container is now run with the `--no-debug`,   `--no-debugger` and `--no-reload` flags.
@@ -148,3 +155,37 @@
   - Host mode
   - Bridge mode
   - AWS VPC mode
+
+### _2. [NOT LIVE] Amazon ECS Security Best Practices_
+
+- Over 75% of containers on the web have considerable security threats
+- 76% of contaiers run as root
+- AWS Solutions
+  - Virtual Machines (EC2)
+  - **ECS**, Fargate, EKS
+- Use only non-vulnerable container images
+- ECR / Dockerhub store images
+- Launch Types:
+  - EC2 Context: ELB -> Auto Scaling groups -> EC2 instances (more user managed)
+  - ECS Context: ELB -> ECS Cluster -> Auto Scaling groups -> ECS instances
+  - Fargate Context: ELB -> ECS Cluster -> Fargate tasks (more aws managed)
+- Serverless containers (ex Fargate):
+  - No visibility of infrastructure
+  - No file/network monitoring
+- Use AWS Inspector to run vulnerabilities tests on your ECR images
+  - Push enabled option
+- Best Practices (AWS):
+  - Cloud Control Plane Configuration
+  - Choosing the right public or private ECR for images
+  - Use VPC Endpoints or Security groups
+- Best Practices (Application):
+  - Read only access
+  - Run only the most recent ECR agent daemon on EC2
+  - Use only safe images
+  - Do not keep any secrets in your images
+
+
+
+
+
+
