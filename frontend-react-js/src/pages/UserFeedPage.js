@@ -2,17 +2,20 @@ import './UserFeedPage.css';
 import React from "react";
 import { useParams } from 'react-router-dom';
 
-import DesktopNavigation  from '../components/DesktopNavigation';
-import DesktopSidebar     from '../components/DesktopSidebar';
+import DesktopNavigation from '../components/DesktopNavigation';
+import DesktopSidebar from '../components/DesktopSidebar';
 import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
+import EditProfileButton from '../components/EditProfileButton';
 
 // [TODO] Authenication
 import Cookies from 'js-cookie'
 
 export default function UserFeedPage() {
   const [activities, setActivities] = React.useState([]);
+  const [profile, setProfile] = React.useState([]);
   const [popped, setPopped] = React.useState([]);
+  const [poppedProfile, setPoppedProfile] = React.useState([]);
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
 
@@ -27,7 +30,8 @@ export default function UserFeedPage() {
       });
       let resJson = await res.json();
       if (res.status === 200) {
-        setActivities(resJson)
+        setActivities(resJson.profile)
+        setActivities(resJson.activities)
       } else {
         console.log(res)
       }
@@ -47,7 +51,7 @@ export default function UserFeedPage() {
     }
   };
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
@@ -61,7 +65,12 @@ export default function UserFeedPage() {
       <DesktopNavigation user={user} active={'profile'} setPopped={setPopped} />
       <div className='content'>
         <ActivityForm popped={popped} setActivities={setActivities} />
-        <ActivityFeed title={title} activities={activities} />
+        <div className='activity_feed'>
+          <div className='activity_feed_heading'>
+            <div className='title'>{props.title}</div>
+          </div>
+          <ActivityFeed title={title} activities={activities} />
+        </div>
       </div>
       <DesktopSidebar user={user} />
     </article>
