@@ -21,7 +21,7 @@ COPY . .
 # Set env vars
 # Inside Container and will remain set when the container is running
 ENV FLASK_DEBUG=1
-
+ENV PYTHONUNBUFFERED=1
 EXPOSE ${PORT}
 # CMD (Command)
 # 

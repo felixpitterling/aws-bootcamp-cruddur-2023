@@ -4,8 +4,8 @@ import EditProfileButton from '../components/EditProfileButton';
 
 export default function ProfileHeading(props) {
 
-    const backgroundImage = 'url("https://pbs.twimg.com/media/D-jnKUPU4AE3hVR.jpg")'
-    // const backgroundImage = 'url("assets.felix-cloudcamp.com/banners/banner.jpg")'
+    // const backgroundImage = 'url("https://pbs.twimg.com/media/D-jnKUPU4AE3hVR.jpg")'
+    const backgroundImage = 'url("https://assets.felix-cloudcamp.com/banners/banner.jpg")'
     const styles = {
         backgroundImage: backgroundImage,
         backgroundSize: 'cover',
@@ -18,8 +18,8 @@ export default function ProfileHeading(props) {
             <div className='banner' style={styles}>
 
                 <div className='avatar'>
-                    {/* <img src="https://assets.felix-cloudcamp.com/avatars/data.jpg"></img> */}
-                    <img src="https://upload.wikimedia.org/wikipedia/en/0/09/DataTNG.jpg"></img>
+                    <img src="https://assets.felix-cloudcamp.com/avatars/data.jpg"></img>
+                    {/* <img src="https://upload.wikimedia.org/wikipedia/en/0/09/DataTNG.jpg"></img> */}
                 </div>
             </div>
             <div className='info'>
