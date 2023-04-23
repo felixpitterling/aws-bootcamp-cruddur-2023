@@ -1,22 +1,22 @@
 import './ProfileForm.css';
 import React from "react";
 import process from 'process';
-import {getAccessToken} from 'lib/CheckAuth';
+import { getAccessToken } from 'lib/CheckAuth';
 
 export default function ProfileForm(props) {
   const [bio, setBio] = React.useState(0);
   const [displayName, setDisplayName] = React.useState(0);
 
-  React.useEffect(()=>{
-    console.log('useEffects',props)
+  React.useEffect(() => {
+    console.log('useEffects', props)
     setBio(props.profile.bio);
     setDisplayName(props.profile.display_name);
   }, [props.profile])
 
-  const s3uploadkey = async (event)=> {
+  const s3uploadkey = async (event) => {
     try {
       console.log('s3upload')
-      const backend_url = "https://clbx5fa2yb.execute-api.ca-central-1.amazonaws.com/avatars/key_upload"
+      const backend_url = "https://qvjyu5v0x9.execute-api.eu-central-1.amazonaws.com/avatars/key_upload"
       await getAccessToken()
       const access_token = localStorage.getItem("access_token")
       const res = await fetch(backend_url, {
@@ -25,10 +25,11 @@ export default function ProfileForm(props) {
           'Authorization': `Bearer ${access_token}`,
           'Accept': 'application/json',
           'Content-Type': 'application/json'
-      }})
+        }
+      })
       let data = await res.json();
       if (res.status === 200) {
-        console.log('presigned url',data)
+        console.log('presigned url', data)
       } else {
         console.log(res)
       }
@@ -36,15 +37,16 @@ export default function ProfileForm(props) {
       console.log(err);
     }
   }
-  const s3upload = async (event)=> {
-    console.log('event',event)
+
+  const s3upload = async (event) => {
+    console.log('event', event)
     const file = event.target.files[0]
-    console.log('file',file)
+    console.log('file', file)
     const filename = file.name
     const size = file.size
     const type = file.type
     const preview_image_url = URL.createObjectURL(file)
-    console.log(filename,size,type)
+    console.log(filename, size, type)
 
     try {
       console.log('s3upload')
@@ -54,10 +56,11 @@ export default function ProfileForm(props) {
         body: file,
         headers: {
           'Content-Type': type
-      }})
+        }
+      })
       let data = await res.json();
       if (res.status === 200) {
-        console.log('presigned url',data)
+        console.log('presigned url', data)
       } else {
         console.log(res)
       }
@@ -105,7 +108,7 @@ export default function ProfileForm(props) {
     setDisplayName(event.target.value);
   }
 
-  const close = (event)=> {
+  const close = (event) => {
     if (event.target.classList.contains("profile_popup")) {
       props.setPopped(false)
     }
@@ -114,7 +117,7 @@ export default function ProfileForm(props) {
   if (props.popped === true) {
     return (
       <div className="popup_form_wrap profile_popup" onClick={close}>
-        <form 
+        <form
           className='profile_form popup_form'
           onSubmit={onsubmit}
         >
@@ -125,11 +128,11 @@ export default function ProfileForm(props) {
             </div>
           </div>
           <div className="popup_content">
-            
+
             <div className="upload" onClick={s3uploadkey}>
               Upload Avatar
             </div>
-          <input type="file" name="avatarupload" onChange={s3upload} />
+            <input type="file" name="avatarupload" onChange={s3upload} />
 
             <div className="field display_name">
               <label>Display Name</label>
@@ -137,7 +140,7 @@ export default function ProfileForm(props) {
                 type="text"
                 placeholder="Display Name"
                 value={displayName}
-                onChange={display_name_onchange} 
+                onChange={display_name_onchange}
               />
             </div>
             <div className="field bio">
@@ -145,7 +148,7 @@ export default function ProfileForm(props) {
               <textarea
                 placeholder="Bio"
                 value={bio}
-                onChange={bio_onchange} 
+                onChange={bio_onchange}
               />
             </div>
           </div>
