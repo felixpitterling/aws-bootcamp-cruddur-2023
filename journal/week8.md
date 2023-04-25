@@ -53,6 +53,7 @@
 
 - [x] Implement Users Profile Form
   - Added [ProfileForm.js](./../frontend-react-js/src/components/ProfileForm.js) & [ProfileForm.css](./../frontend-react-js/src/components/ProfileForm.css) 
+  <img src="./assets/week8/week8-form.PNG" width="350"> 
   
 - [x] Implement Backend Migrations
   - Created the [migration](./../bin/generate/migration) script:
