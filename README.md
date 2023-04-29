@@ -3,9 +3,6 @@
 - Application: Cruddur
 - Cohort: 2023-A1
 
-
-![](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiT2dUTm84ZkYxeXpTcVA4UGR0VEhwSVdTTzF4MmIyMmp3QnlieThSNlFSdnBHU3JKY0tDUHhLWXlxdUVhWGt4ZGNrSG9QUWJGUnUvVDRxaDBteEZmOEJFPSIsIml2UGFyYW1ldGVyU3BlYyI6IldnQkplcTFiUEFQakdoWXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
-
 ![Cruddur Screenshot](_docs/assets/cruddur-screenshot.png)
 
 ## Journaling Homework
