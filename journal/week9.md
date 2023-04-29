@@ -1,5 +1,13 @@
 # Week 9 — CI/CD with CodePipeline, CodeBuild and CodeDeploy
 
+```yml
+  pre_build:
+    commands:
+      - echo Running pre-build tasks...
+      - cd $CODEBUILD_SRC_DIR/backend-flask
+      - pytest unit-test.py
+```
+
 ## Class Notes
 
 ### _1. [LIVE] CI/CD Overview_
