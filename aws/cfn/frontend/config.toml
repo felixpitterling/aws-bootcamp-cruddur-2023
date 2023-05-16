@@ -1,0 +1,9 @@
+[deploy]
+bucket = 'cruddur-cfn-artifacts'
+region = 'eu-central-1'
+stack_name = 'CrdFrontend'
+
+[parameters]
+CertificateArn = 'arn:aws:acm:us-east-1:431831783451:certificate/e6d808fe-d1dc-4ee9-8a59-5cab1b01637e'
+WwwBucketName = 'www.felix-cloudcamp.com'
+RootBucketName = 'felix-cloudcamp.com'
