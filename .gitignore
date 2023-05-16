@@ -8,3 +8,4 @@ frontend-react-js.env
 build.toml
 node_modules
 tmp/*
+sync.env
