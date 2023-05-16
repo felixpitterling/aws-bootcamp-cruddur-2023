@@ -7,3 +7,4 @@ frontend-react-js.env
 .aws-sam
 build.toml
 node_modules
+tmp/*
