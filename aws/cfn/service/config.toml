@@ -2,3 +2,8 @@
 bucket = 'cruddur-cfn-artifacts'
 region = 'eu-central-1'
 stack_name = 'CrdSrvBackendFlask'
+
+
+[parameters]
+EnvFrontendUrl = 'felix-cloudcamp.com'
+EnvBackendUrl = 'api.felix-cloudcamp.com'
