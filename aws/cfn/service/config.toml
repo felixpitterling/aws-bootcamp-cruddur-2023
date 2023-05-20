@@ -5,5 +5,5 @@ stack_name = 'CrdSrvBackendFlask'
 
 
 [parameters]
-EnvFrontendUrl = 'felix-cloudcamp.com'
-EnvBackendUrl = 'api.felix-cloudcamp.com'
+EnvFrontendUrl = 'https://felix-cloudcamp.com'
+EnvBackendUrl = 'https://api.felix-cloudcamp.com'
