@@ -9,3 +9,4 @@ ClusterStack = 'CrdCluster'
 GitHubBranch = 'prod'
 GithubRepo = 'felixpitterling/aws-bootcamp-cruddur-2023'
 ArtifactBucketName = "cruddur-codepipeline-artifacts"
+BuildSpec = 'backend-flask/buildspec.yml'
