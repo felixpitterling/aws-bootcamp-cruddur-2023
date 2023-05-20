@@ -124,17 +124,55 @@
   - Creating a cloud project with stakeholders or joining an open source cloud project 
 
 
-
-
-
-
-
-
-
-
-
-
 # Module 3 — Job Search
+
+## Notes
+- In the tech industry you have a lot of flexability
+  - For example by making an internal transfers
+  - Some starting point is better than nothing
+- Cloud is **not an entry level tech job**
+  - 10 Months: CCP -> Solutions Architect -> Developer
+  - It takes money (for courses) and time
+  - Do not be selective (just go apply if it sounds good to you)
+  - Applying can be a full time job (at least 30 applications/day)
+- Landing your first job
+  - Learn backwards from the job market
+    - **What skills are actually needed?**
+  - **Put yourself out there** (ask questions, come out of your comfort zone)
+  - Cloud roles & job descriptions are **not explained well sometimes**
+  - Everything is **negotiable** (for example x number of years of experience)
+    - It helps being very good at one/two things
+  - The job market & the application process provides a good **feedback loop**
+  - The size of the company matters (small companies can be more flexible)
+- Support Role
+  - Great way to start in the industry
+  - But you do not want to get stuck
+  - Have good **relationships** with the teams (internally) of roles that you are interested in helps a lot to *move up*
+  - Work outside of your responsibilities (responsibly)
+- Resumes
+  - No one will ever look at a four page resume
+  - Many people will look at your GitHub if provided
+  - Maybe have different resumes for different purposes
+- Projects
+  - **Pat out gaps in your resume**
+  - Take existing projects and **refactor**
+    - Great opportunity to do compare & contrast in an interview
+  - Blog the projects that you do & present valuable learnings 
+  - Small projects + related blog post can quite impressive 
+  - Share learnings online (social media)
+- Networking
+  - Discord, Slack, ... are good communities
+    - **Reading & Writing**
+  - These things can make a big difference
+  - Open Source Projects
+  - Referral can help a lot as well
+    - Message people from the company (even if you do not know them)
+  - **Internal referrals**
+
+
+
+
+
 # Module 4 — Interviewing
 
 
