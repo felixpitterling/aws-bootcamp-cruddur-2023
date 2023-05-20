@@ -45,8 +45,24 @@
 - Focus on **job descriptions** and not the job title
 
 ## Homework
-- [] Questions
-- [] Analysing Job Postings
+- [x] Questions
+  1. I am going to become a: Architect
+  2. I am a good fit because: I enjoy the big picture things and connecting micro-services together to create useful tools. Overall I like the combination of technical and social aspects of the role.
+  3. I will know:
+     1. Content to get my solutions architect certification
+     2. Communcations skills that are generally needed
+     3. More AWS skills
+  4. I will not get distracted by:
+     1. Machine learning
+     2. Learning Rust
+     3. Web development
+  
+- [x] Analysing Job Postings (Green = YES, Orange = MAYBE, RED = No)
+  1. <img src="./assets/extra/posting1.PNG" width="400">  
+  2. <img src="./assets/extra/posting2.PNG" width="400">  
+  3. <img src="./assets/extra/posting3.PNG" width="400">  
+  4. <img src="./assets/extra/posting4.PNG" width="400"> 
+  5. <img src="./assets/extra/posting5.PNG" width="400"> 
 
 
 # Module 2 — Cloud Resumes
