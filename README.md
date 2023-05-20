@@ -3,9 +3,6 @@
 - Application: Cruddur
 - Cohort: 2023-A1
 
-
-![](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiT2dUTm84ZkYxeXpTcVA4UGR0VEhwSVdTTzF4MmIyMmp3QnlieThSNlFSdnBHU3JKY0tDUHhLWXlxdUVhWGt4ZGNrSG9QUWJGUnUvVDRxaDBteEZmOEJFPSIsIml2UGFyYW1ldGVyU3BlYyI6IldnQkplcTFiUEFQakdoWXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
-
 ![Cruddur Screenshot](_docs/assets/cruddur-screenshot.png)
 
 ## Journaling Homework
@@ -21,7 +18,7 @@ The `/journal` directory contains
 - [x] [Week 6](journal/week6.md)
 - [x] [Week 7](journal/week7.md)
 - [x] [Week 8](journal/week8.md)
-- [ ] [Week 9](journal/week9.md)
+- [x] [Week 9](journal/week9.md)
 - [ ] [Week 10](journal/week10.md)
 - [ ] [Week 11](journal/week11.md)
 - [ ] [Week 12](journal/week12.md)

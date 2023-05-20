@@ -4,3 +4,8 @@ session-manager-plugin.deb
 .env.backend-flask
 backend-flask.env
 frontend-react-js.env
+.aws-sam
+build.toml
+node_modules
+tmp/*
+sync.env

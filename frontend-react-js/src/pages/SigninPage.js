@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // [TODO] Authenication
 // import Cookies from 'js-cookie'
 import { Auth } from 'aws-amplify';
-import QRCode from 'qrcode.react';
+// import QRCode from 'qrcode.react';
 
 //MFA VERSION
 // export default function SigninPage() {
@@ -202,7 +202,7 @@ export default function SigninPage() {
         window.location.href = "/"
       })
       .catch(error => {
-        if (error.code == 'UserNotConfirmedException') {
+        if (error.code === 'UserNotConfirmedException') {
           window.location.href = "/confirm"
         }
         setErrors(error.message)
