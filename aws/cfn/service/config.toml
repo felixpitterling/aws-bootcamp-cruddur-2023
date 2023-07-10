@@ -7,3 +7,4 @@ stack_name = 'CrdSrvBackendFlask'
 [parameters]
 EnvFrontendUrl = 'https://felix-cloudcamp.com'
 EnvBackendUrl = 'https://api.felix-cloudcamp.com'
+DDBMessageTable = 'CrdDdb-DynamoDBTable-17CDI3L1TO1AX'

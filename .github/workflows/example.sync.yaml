@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: cd frontend-react-js
-      - run: npm ci
+      - run: npm i
       - run: npm run build
   deploy:
     name: Sync Static Build to S3 Bucket
@@ -44,5 +44,5 @@ jobs:
           ruby-version: '3.1'
       - name: Install dependencies
         run: bundle install
-      - name: Run tests
-        run: bundle exec rake sync
+      # - name: Run tests
+      #   run: bundle exec rake sync
