@@ -21,7 +21,7 @@
 
 ## Homework Challenges
 
-- [] Implementing Test Stage
+- [x] Implementing Test Stage
   - I spent a lot of time researching how to do this challenge. First I was set on using Jenkins on an EC2 instance, however I could not find any guide online that used Jenkins **just** for the test stage. I wanted to avoid building the image twice.
   
   - I then moved onto keeping it simple with the testing feature provided by CodeBuild. I did this my adding the following code to the [buildspec.yml](./../backend-flask/buildspec.yml): 
@@ -37,6 +37,33 @@
     - <img src="./assets/week9/week9-testing-fail.PNG" width="750">  
   - I also tried the recommended way of adding a test directly in CodePipeline using a secondary CodeBuild Project and `buildspec.yml` file
   - I decided to move on for now as I am currently behind. CI/CD is very new to me and I am still happy that I took some time to learn about build servers.
+
+  ### Second Attempt
+  - For the second attempt I created a new [buildspec.yml](./../backend-flask/tests/buildspec.yml) file which runs a test using `pytest` in the `build phase` after running `pip3 install -r requirements.txt` in the `install phase`:
+    - ```yml
+      build:
+        commands:
+          - echo "testing start"
+          - cd $CODEBUILD_SRC_DIR/backend-flask/tests
+          - python -m pytest
+          - echo "testing done"
+      ```
+  - Also in the new `/backend-flask/tests` folder I created the files [conftest.py](./../backend-flask/tests/conftest.py) and [test_backend.py](./../backend-flask/tests/test_backend.py). 
+    - In [conftest.py](./../backend-flask/tests/conftest.py) the line `from app import app as flask_app` imports the `app` object from [app.py](./../backend-flask/app.py) (the flask application) in order for `pytest` to be able to interact with the backend.
+  - In [test_backend.py](./../backend-flask/tests/test_backend.py) we can find the acutal unit test which hits the endpoint of our previously written health-check:
+    - ```python
+      def test_healthcheck(client):
+        response = client.get("/api/health-check")
+        assert response.status_code == 200
+      ```
+  - Then I tried running the test locally my connecting to the backend docker container:
+    - <img src="./assets/week9/week9-pytest-local.PNG" width="800">
+  - After confirming that the test is able to run locally I created a new `CodeBuild` project and attached it as a stage to the pipeline:
+    - <img src="./assets/week9/week9-codebuild-for-testing.PNG" width="600"> 
+  - After doing a pull request from main to prod the CICD pipeline runs through all the stages:
+    - <img src="./assets/week9/week9-phase-details.PNG" width="600">  
+  - Finally we can see that the test passes in `CloudWatch`:
+    - <img src="./assets/week9/week9-testing-cw-logs.PNG" width="600"> 
 
 
 

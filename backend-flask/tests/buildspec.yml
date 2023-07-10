@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - echo "cd into $CODEBUILD_SRC_DIR/backend"
+      - cd $CODEBUILD_SRC_DIR/backend-flask
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $IMAGE_URL
+      - pip3 install -r requirements.txt
+  build:
+    commands:
+      - echo "testing start"
+      - cd $CODEBUILD_SRC_DIR/backend-flask/tests
+      - python -m pytest
+      - echo "testing done"
+
+env:
+  variables:
+    FRONTEND_URL: http://localhost:3000
+    BACKEND_URL: http://localhost:4567
+    AWS_ACCOUNT_ID: 431831783451
+    CONTAINER_NAME: backend-flask
+    IMAGE_URL: 431831783451.dkr.ecr.eu-central-1.amazonaws.com
+    REPO_NAME: backend-flask:latest
