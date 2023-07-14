@@ -78,12 +78,14 @@ export default function ActivityShowPage() {
           <div className="back" onClick={goBack}>&larr;</div>	
             <div className='title'>Crud</div>
           </div>
+          <div className='activity_feed_collection'>
           {el_activity}
           <Replies
             setReplyActivity={setReplyActivity} 
             setPopped={setPoppedReply} 
             replies={replies} 
-          />
+            />
+            </div>
         </div>
       </div>
       <DesktopSidebar user={user} />
