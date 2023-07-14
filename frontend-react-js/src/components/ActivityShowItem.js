@@ -1,5 +1,5 @@
 import './ActivityItem.css';
-
+import ActivityContent  from '../components/ActivityContent';
 import ActivityActionReply  from '../components/ActivityActionReply';
 import ActivityActionRepost  from '../components/ActivityActionRepost';
 import ActivityActionLike  from '../components/ActivityActionLike';
@@ -9,38 +9,34 @@ import { Link } from "react-router-dom";
 import { format_datetime, time_ago, time_future } from '../lib/DateTimeFormats';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
 
+
+function formatDate(dateTimeString) {
+  const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  };
+
+  const date = new Date(dateTimeString);
+  const formattedDate = date.toLocaleString('en-US', options);
+
+  return formattedDate;
+}
+
 export default function ActivityShowItem(props) {
 
   const attrs = {}
-  attrs.className = 'activity_item expanded'
+  attrs.className = 'activity_item'
   return (
     <div {...attrs}>
       <div className="acitivty_main">
-        <div className='activity_content_wrap'>
-          <div className='activity_content'>
-            <Link className='activity_avatar'to={`/@`+props.activity.handle} ></Link>
-            <div className='activity_meta'>
-              <div className='activity_identity' >
-                <Link className='display_name' to={`/@`+props.activity.handle}>{props.activity.display_name}</Link>
-                <Link className="handle" to={`/@`+props.activity.handle}>@{props.activity.handle}</Link>
-              </div>{/* activity_identity */}
-              <div className='activity_times'>
-                <div className="created_at" title={format_datetime(props.activity.created_at)}>
-                  <span className='ago'>{time_ago(props.activity.created_at)}</span> 
-                </div>
-                <div className="expires_at" title={format_datetime(props.activity.expires_at)}>
-                  <BombIcon className='icon' />
-                  <span className='ago'>{time_future(props.activity.expires_at)}</span>
-                </div>
-              </div>{/* activity_times */}
-            </div>{/* activity_meta */}
-          </div>{/* activity_content */}
-          <div className="message">{props.activity.message}</div>
-        </div>
-
+        <ActivityContent activity={props.activity} />
         <div className='expandedMeta'>
           <div class="created_at">
-            {format_datetime(props.activity.created_at)}
+            {formatDate(props.activity.created_at)}
           </div>
         </div>
         <div className="activity_actions">

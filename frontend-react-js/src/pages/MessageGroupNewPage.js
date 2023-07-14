@@ -51,7 +51,7 @@ export default function MessageGroupPage() {
   }, [])
   return (
     <article>
-      <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
+      <DesktopNavigation user={user} active={'messages'} setPopped={setPopped} />
       <section className='message_groups'>
         <MessageGroupFeed otherUser={otherUser} message_groups={messageGroups} />
       </section>

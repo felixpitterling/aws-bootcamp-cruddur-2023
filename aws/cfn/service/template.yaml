@@ -49,10 +49,8 @@ Parameters:
     Default: 6di0cmdrtnvsgeljjltmi9l4er
   EnvFrontendUrl:
     Type: String
-    Default: "*"
   EnvBackendUrl:
     Type: String
-    Default: "*"
   SecretsAWSAccessKeyId:
     Type: String
     Default: 'arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/AWS_ACCESS_KEY_ID'
@@ -70,7 +68,9 @@ Parameters:
     Default: 'arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS'
   DDBMessageTable:
     Type: String
-    Default: cruddur-messages
+  FlaskEnv:
+    Type: String
+    Default: "production"
   
 Resources:
   FargateService:
@@ -168,6 +168,8 @@ Resources:
               awslogs-region: !Ref AWS::Region
               awslogs-stream-prefix: !Ref ServiceName
           Environment:
+            - Name: FLASK_ENV
+              Value: !Ref FlaskEnv
             - Name: DDB_MESSAGE_TABLE
               Value: !Ref DDBMessageTable
             - Name: 'OTEL_SERVICE_NAME'
