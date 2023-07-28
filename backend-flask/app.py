@@ -31,14 +31,5 @@ routes.activities.load(app)
 routes.users.load(app)
 routes.messages.load(app)
 
-import stripe
-
-stripe_keys = {
-    "secret_key": os.environ["STRIPE_SECRET_KEY"],
-    "publishable_key": os.environ["STRIPE_PUBLISHABLE_KEY"],
-}
-
-stripe.api_key = stripe_keys["secret_key"]
-
 if __name__ == "__main__":
   app.run(debug=True)
