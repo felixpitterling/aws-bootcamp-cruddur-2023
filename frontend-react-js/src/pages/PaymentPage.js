@@ -17,13 +17,12 @@ export default function PaymentPage() {
   const [errors, setErrors] = React.useState([]);
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
-  const params = useParams();
-
 
   const loadData = async () => {
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/create-payment-intent`;
     const payload_data = {
-      items: [{ id: "prod_OKjDcci4cOTpuD" }],
+      items: [{ id: "Cruddur Premium" }],
+      customer: user.cognito_user_uuid
     };
     post(url, payload_data, {
       auth: true,
@@ -39,11 +38,18 @@ export default function PaymentPage() {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
 
+    checkAuth(setUser);
     loadData();
   }, [])
+
+  React.useEffect(() => {
+    if (user) {
+      loadData();
+    }
+  }, [user]);
   
   const appearance = {
-    theme: 'stripe',
+    theme: 'night',
   };
   const options = {
     clientSecret,
