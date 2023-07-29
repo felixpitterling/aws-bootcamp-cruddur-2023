@@ -3,6 +3,8 @@
     align-items: center;
   }
   
+
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
@@ -101,6 +103,24 @@
     transform-origin: 10.4px 10.2px;
     -webkit-animation: loading 2s infinite ease 1.5s;
     animation: loading 2s infinite ease 1.5s;
+  }
+
+  .premium-message {
+  /* Styling for the premium message box */
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #9500FF; /* New background color (color with hexadecimal value #9500FF) */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+  /* Center the box inside its parent container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   }
   
   .spinner:after {

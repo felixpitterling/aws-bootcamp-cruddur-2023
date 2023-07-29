@@ -12,7 +12,7 @@ export default function ProfileHeading(props) {
   };
 
   const premium_url = process.env.REACT_APP_FRONTEND_URL + "/payment"
-
+  console.log(props.profile.premium_status)
   return (
   <div className='activity_feed_heading profile_heading'>
     <div className='title'>{props.profile.display_name}</div>

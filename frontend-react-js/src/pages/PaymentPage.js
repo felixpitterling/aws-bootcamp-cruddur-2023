@@ -13,7 +13,8 @@ import { post } from "lib/Requests";
 const stripePromise = loadStripe("pk_test_51LtWXlHl6gmAm4mQq3xVLsZeMfo3bmn9bqWHvbB5J9qoYJXQTBLP3wE1h4ozIO44Tq0FAYUKkUW3gD4KQW6RUlbP00aoedBCj8");
 
 export default function PaymentPage() {
-  const [clientSecret, setClientSecret] = useState("");
+  const [clientSecret, setClientSecret] = useState(""); 
+  const [oldPremiumStatus, setOldPremiumStatus] = useState(false);
   const [errors, setErrors] = React.useState([]);
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
@@ -28,9 +29,13 @@ export default function PaymentPage() {
       auth: true,
       setErrors: setErrors,
       success: function (data) {
+  
+        setOldPremiumStatus(data.oldPremiumStatus)
         setClientSecret(data.clientSecret);
+        
       },
     });
+ 
   };
 
   React.useEffect(() => {
@@ -65,4 +70,6 @@ export default function PaymentPage() {
       )}
     </div>
   );
+
+  
 }

@@ -63,3 +63,9 @@ def load(app):
   @cross_origin()
   def create_payment():
     return CreatePayment.run(request.data)
+
+  
+  @app.route('/api/activities/check-payment-intent', methods=['POST'])
+  @cross_origin()
+  def check_payment():
+    return CreatePayment.check(request)
