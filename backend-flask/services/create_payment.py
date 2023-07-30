@@ -35,12 +35,13 @@ class CreatePayment:
 
             sql = db.template('users', 'show_premium')
 
-            # old_premium_status = db.query_commit(sql, {
-            # 'cognito_user_id': data['customer']
-            # })
-            old_premium_status = True
-            print(old_premium_status)
-          
+            try: 
+                old_premium_status = db.query_object_json(sql, {
+                'cognito_user_id': data['customer']
+                })['profile']['premium_status']
+            except Exception as e:
+                print(e)
+
             return ({
                 'clientSecret': intent['client_secret'],
                 'oldPremiumStatus': old_premium_status
@@ -51,7 +52,7 @@ class CreatePayment:
 
     def check(request):
         stripe.api_key = os.environ["STRIPE_SECRET_KEY"]
-        endpoint_secret = 'whsec_6bgTmT7XLX0hvejEyagI3uMW25Ooj7Qx'
+        endpoint_secret = os.environ["STRIPE_ENDPOINT_KEY"]
 
         event = None
         payload = request.data
@@ -70,7 +71,7 @@ class CreatePayment:
             payment_intent = event['data']['object']
             cognito_user_id = payment_intent['metadata']['customer']
             CreatePayment.update(True, cognito_user_id)
-            print(cognito_user_id)
+            # print(cognito_user_id)
         else:
             print('Unhandled event type {}'.format(event['type']))
 

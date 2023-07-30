@@ -10,7 +10,7 @@ import "./PaymentPage.css";
 import { checkAuth } from 'lib/CheckAuth';
 import { post } from "lib/Requests";
 
-const stripePromise = loadStripe("pk_test_51LtWXlHl6gmAm4mQq3xVLsZeMfo3bmn9bqWHvbB5J9qoYJXQTBLP3wE1h4ozIO44Tq0FAYUKkUW3gD4KQW6RUlbP00aoedBCj8");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 export default function PaymentPage() {
   const [clientSecret, setClientSecret] = useState(""); 
@@ -28,11 +28,9 @@ export default function PaymentPage() {
     post(url, payload_data, {
       auth: true,
       setErrors: setErrors,
-      success: function (data) {
-  
+      success: function (data) { 
         setOldPremiumStatus(data.oldPremiumStatus)
         setClientSecret(data.clientSecret);
-        
       },
     });
  
@@ -61,12 +59,29 @@ export default function PaymentPage() {
     appearance,
   };
 
+  // return (
+  //   <div className="App">
+  //     {clientSecret && (
+  //       <Elements options={options} stripe={stripePromise}>
+  //         <CheckoutForm />
+  //       </Elements>
+  //     )}
+  //   </div>
+  // );
+
   return (
     <div className="App">
-      {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm />
-        </Elements>
+      {oldPremiumStatus == true ? (
+        <div className="premium-message">
+          <p>You already have premium access!</p>
+        </div>
+      ) : (
+        // Render the checkout form if oldPremiumStatus is not true
+        clientSecret && (
+          <Elements options={options} stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
+        )
       )}
     </div>
   );
