@@ -10,6 +10,9 @@ export default function ProfileHeading(props) {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
+
+  const premium_url = process.env.REACT_APP_FRONTEND_URL + "/payment"
+  console.log(props.profile.premium_status)
   return (
   <div className='activity_feed_heading profile_heading'>
     <div className='title'>{props.profile.display_name}</div>
@@ -25,7 +28,8 @@ export default function ProfileHeading(props) {
       <EditProfileButton setPopped={props.setPopped} />
     </div>
     <div className="bio">{props.profile.bio}</div>
-
+    <p className="status">Account Status: {props.profile.premium_status ? "Premium Account" : "Free Account"}</p>
+    {props.profile.premium_status ? null : <a href={premium_url}><button className="premiumButton">Get Premium</button></a>}
   </div>
   );
 }

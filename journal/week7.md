@@ -1,3 +1,3 @@
-# Week 7 — Solving CORS with a Load Balancer and Custom Domain
+# Week 7
 
-Find all information to Week 7 in [week6](./week6.md)
+Find all information about Week 7 in [week6](./week6.md)

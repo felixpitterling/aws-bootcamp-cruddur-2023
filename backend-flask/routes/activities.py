@@ -12,6 +12,7 @@ from services.notifications_activities import *
 from services.create_activity import *
 from services.search_activities import *
 from services.create_reply import *
+from services.create_payment import *
 
 ## helpers
 from lib.helpers import model_json
@@ -57,3 +58,14 @@ def load(app):
     message = request.json['message']
     model = CreateReply.run(message, g.cognito_user_id, activity_uuid)
     return model_json(model)
+
+  @app.route('/api/activities/create-payment-intent', methods=['POST'])
+  @cross_origin()
+  def create_payment():
+    return CreatePayment.run(request.data)
+
+  
+  @app.route('/api/activities/check-payment-intent', methods=['POST'])
+  @cross_origin()
+  def check_payment():
+    return CreatePayment.check(request)

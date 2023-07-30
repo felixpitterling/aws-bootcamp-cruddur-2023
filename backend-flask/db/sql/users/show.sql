@@ -6,6 +6,7 @@ SELECT
       users.handle,
       users.display_name,
       users.bio,
+      users.premium_status,
       (
        SELECT 
         count(true) 

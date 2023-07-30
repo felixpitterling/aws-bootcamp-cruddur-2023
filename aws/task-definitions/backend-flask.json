@@ -59,14 +59,18 @@
         {"name": "AWS_COGNITO_USER_POOL_CLIENT_ID", "value": "6di0cmdrtnvsgeljjltmi9l4er"},
         {"name": "FRONTEND_URL", "value": "https://felix-cloudcamp.com"},
         {"name": "BACKEND_URL", "value": "https://api.felix-cloudcamp.com"},
-        {"name": "AWS_DEFAULT_REGION", "value": "eu-central-1"}
+        {"name": "AWS_DEFAULT_REGION", "value": "eu-central-1"},
+        {"name": "STRIPE_PUBLISHABLE_KEY", "value": "pk_test_51LtWXlHl6gmAm4mQq3xVLsZeMfo3bmn9bqWHvbB5J9qoYJXQTBLP3wE1h4ozIO44Tq0FAYUKkUW3gD4KQW6RUlbP00aoedBCj8"}
       ],
       "secrets": [
         {"name": "AWS_ACCESS_KEY_ID"    , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/AWS_ACCESS_KEY_ID"},
         {"name": "AWS_SECRET_ACCESS_KEY", "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/AWS_SECRET_ACCESS_KEY"},
         {"name": "CONNECTION_URL"       , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/CONNECTION_URL" },
         {"name": "ROLLBAR_ACCESS_TOKEN" , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/ROLLBAR_ACCESS_TOKEN" },
-        {"name": "OTEL_EXPORTER_OTLP_HEADERS" , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS" }
+        {"name": "OTEL_EXPORTER_OTLP_HEADERS" , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS" },
+        {"name": "STRIPE_SECRET_KEY" , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/STRIPE_SECRET_KEY" },
+        {"name": "STRIPE_ENDPOINT_KEY" , "valueFrom": "arn:aws:ssm:eu-central-1:431831783451:parameter/cruddur/backend-flask/STRIPE_ENDPOINT_KEY" }
+
       ]
     }
   ]

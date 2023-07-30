@@ -1,5 +1,5 @@
 .profile_heading {
-  padding-bottom: 0px;
+  padding-bottom: 32px;
 }
 .profile_heading .profile-avatar {
   position: absolute;
@@ -47,3 +47,11 @@
   padding: 16px;
   color: rgba(255,255,255,0.7);
 }
+.profile_heading .status {
+  color: rgba(255,255,255,0.7);
+}
+
+/* .profile_heading .premiumButton {
+  padding-top: 16px;
+  padding-bottom: 16px;
+} */

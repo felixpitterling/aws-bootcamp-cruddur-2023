@@ -12,6 +12,7 @@ import MessageGroupPage from './pages/MessageGroupPage';
 import MessageGroupNewPage from './pages/MessageGroupNewPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import ActivityShowPage from './pages/ActivityShowPage';
+import PaymentPage from './pages/PaymentPage';
 import React from 'react';
 import {
   createBrowserRouter,
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeFeedPage />
+  },
+  {
+    path: "/payment",
+    element: <PaymentPage />
   },
   {
     path: "/notifications",

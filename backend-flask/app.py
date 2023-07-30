@@ -1,8 +1,11 @@
+from flask_cors import cross_origin
+import stripe
+import json
 import os
 import sys
 
 from flask import Flask
-from flask import request, g
+from flask import request, g, jsonify
 
 from lib.rollbar import init_rollbar
 from lib.xray import init_xray
@@ -18,12 +21,12 @@ import routes.messages
 
 app = Flask(__name__)
 
-## initalization --------
+# initalization --------
 init_xray(app)
 init_honeycomb(app)
 init_cors(app)
 with app.app_context():
-  g.rollbar = init_rollbar(app)
+    g.rollbar = init_rollbar(app)
 
 # load routes -----------
 routes.general.load(app)
@@ -31,5 +34,7 @@ routes.activities.load(app)
 routes.users.load(app)
 routes.messages.load(app)
 
+
+
 if __name__ == "__main__":
-  app.run(debug=True)
+    app.run(debug=True)

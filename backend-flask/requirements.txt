@@ -16,5 +16,6 @@ psycopg[binary]
 psycopg[pool]
 
 boto3
-
 pytest
+
+stripe
