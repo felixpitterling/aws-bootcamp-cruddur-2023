@@ -17,8 +17,10 @@ CREATE TABLE public.users (
   handle text NOT NULL,
   email text NOT NULL,
   cognito_user_id text NOT NULL,
-  created_at TIMESTAMP default current_timestamp NOT NULL
+  created_at TIMESTAMP DEFAULT current_timestamp NOT NULL,
+  premium_status BOOLEAN DEFAULT FALSE
 );
+
 
 CREATE TABLE public.activities (
   uuid UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
