@@ -59,6 +59,7 @@ export default function CheckoutForm() {
       confirmParams: {
         return_url: `${process.env.REACT_APP_FRONTEND_URL}`,
       },
+
     });
 
     if (error.type === "card_error" || error.type === "validation_error") {
