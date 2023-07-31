@@ -1,5 +1,6 @@
 
 from lib.db import db
+from lib.momento import momento
 from flask import jsonify
 
 
@@ -15,4 +16,5 @@ class UpdateActivities:
             print(e)
             return jsonify(success=False)
 
+        momento.set_cache("cruddur-activities", "query-activities", "")
         return jsonify(success=True)

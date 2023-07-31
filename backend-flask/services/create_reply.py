@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
 from lib.db import db
+from lib.momento import momento
 
 class CreateReply:
   def run(message, cognito_user_id, activity_uuid):
@@ -31,6 +32,7 @@ class CreateReply:
 
       object_json = CreateReply.query_object_activity(uuid)
       model['data'] = object_json
+      momento.set_cache("cruddur-activities", "query-activities", "")
     return model
 
   def create_reply(cognito_user_id, activity_uuid, message):

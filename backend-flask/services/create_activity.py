@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
 from lib.db import db
+from lib.momento import momento
 
 class CreateActivity:
   def run(message, cognito_user_id, ttl):
@@ -47,6 +48,7 @@ class CreateActivity:
 
       object_json = CreateActivity.query_object_activity(uuid)
       model['data'] = object_json
+      momento.set_cache("cruddur-activities", "query-activities", "")
     return model
 
   def create_activity(cognito_user_id, message, expires_at):

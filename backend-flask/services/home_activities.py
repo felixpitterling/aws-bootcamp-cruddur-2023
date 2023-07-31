@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
-# import logging
+
 
 from lib.db import db
+from lib.momento import momento
+import json
 
 tracer = trace.get_tracer("home.activities")
 
@@ -18,6 +20,16 @@ class HomeActivities:
         #   now = datetime.now(timezone.utc).astimezone()
         #   span.set_attribute("app.now", now.isoformat())
 
-        sql = db.template('activities', 'home')
-        results = db.query_array_json(sql)
-        return results
+        response = momento.get_cache("cruddur-activities", "query-activities")
+
+        if response != "":
+            results = json.loads(response)
+            print(results)
+            return results
+
+        else:
+            sql = db.template('activities', 'home')
+            results = db.query_array_json(sql)
+            results_str = json.dumps(results) 
+            momento.set_cache("cruddur-activities", "query-activities", results_str)
+            return results

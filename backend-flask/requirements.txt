@@ -19,3 +19,6 @@ boto3
 pytest
 
 stripe
+
+momento==1.7.0
+momento-wire-types==0.67.0
