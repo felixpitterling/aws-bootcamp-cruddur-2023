@@ -11,10 +11,8 @@ export default function ActivityItem(props) {
   const navigate = useNavigate()
 
   const click = (event) => {
-    console.log(event)
     if (event.target.className == "action activity_action_heart" || event.target.parentElement.className
-
-      == "div.action.activity_action_heart") {
+      == "action activity_action_heart") {
       return;
     }
 
