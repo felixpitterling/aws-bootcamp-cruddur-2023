@@ -71,5 +71,6 @@ def load(app):
 
   @app.route('/api/activities/upvote', methods=['POST'])
   @cross_origin()
-  def check_payment():
-    return UpdateActivities.run(request.data)
+  @jwt_required() 
+  def create_upvote():
+    return UpdateActivities.run(request.json['activity_uuid'])

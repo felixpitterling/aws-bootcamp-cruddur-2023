@@ -35,7 +35,7 @@ export default function ActivityShowItem(props) {
       <div className="acitivty_main">
         <ActivityContent activity={props.activity} />
         <div className='expandedMeta'>
-          <div class="created_at">
+          <div className="created_at">
             {formatDate(props.activity.created_at)}
           </div>
         </div>
