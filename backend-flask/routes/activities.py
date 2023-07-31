@@ -13,6 +13,7 @@ from services.create_activity import *
 from services.search_activities import *
 from services.create_reply import *
 from services.create_payment import *
+from services.update_activity import *
 
 ## helpers
 from lib.helpers import model_json
@@ -64,7 +65,11 @@ def load(app):
   def create_payment():
     return CreatePayment.run(request.data)
 
-  
   @app.route('/api/activities/check-payment-intent', methods=['POST'])
   def check_payment():
     return CreatePayment.check(request)
+
+  @app.route('/api/activities/upvote', methods=['POST'])
+  @cross_origin()
+  def check_payment():
+    return UpdateActivities.run(request.data)
