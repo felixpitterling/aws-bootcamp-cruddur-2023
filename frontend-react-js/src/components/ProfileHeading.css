@@ -1,6 +1,7 @@
 .profile_heading {
   padding-bottom: 32px;
 }
+
 .profile_heading .profile-avatar {
   position: absolute;
   bottom:-74px;
@@ -29,6 +30,12 @@
   flex-grow: 1;
 }
 
+.id {
+  display: inline;
+  padding-right: 43%;
+}
+
+
 .profile_heading .info .id .display_name {
   font-size: 24px;
   font-weight: bold;
@@ -43,10 +50,19 @@
   color: rgba(255,255,255,0.7);
 }
 
+.display_name {
+  white-space: nowrap;
+}
+
 .profile_heading .bio {
   padding: 16px;
   color: rgba(255,255,255,0.7);
 }
+
+.profile_heading .premium {
+  padding: 16px;
+}
+
 .profile_heading .status {
   color: rgba(255,255,255,0.7);
 }

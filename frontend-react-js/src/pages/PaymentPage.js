@@ -12,14 +12,14 @@ import { checkAuth } from 'lib/CheckAuth';
 import { post } from "lib/Requests";
 
 export default function PaymentPage() {
-  const [clientSecret, setClientSecret] = useState(""); 
+  const [clientSecret, setClientSecret] = useState("");
   const [oldPremiumStatus, setOldPremiumStatus] = useState(false);
   const [errors, setErrors] = React.useState([]);
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
-  
+
   const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
-  
+
   const loadData = async () => {
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/create-payment-intent`;
     const payload_data = {
@@ -29,12 +29,12 @@ export default function PaymentPage() {
     post(url, payload_data, {
       auth: false,
       setErrors: setErrors,
-      success: function (data) { 
+      success: function (data) {
         setOldPremiumStatus(data.oldPremiumStatus)
         setClientSecret(data.clientSecret);
       },
     });
- 
+
   };
 
   React.useEffect(() => {
@@ -50,7 +50,7 @@ export default function PaymentPage() {
       loadData();
     }
   }, [user]);
-  
+
   const appearance = {
     theme: 'night',
   };
@@ -78,13 +78,24 @@ export default function PaymentPage() {
       ) : (
         // Render the checkout form if oldPremiumStatus is not true
         clientSecret && (
-          <Elements options={options} stripe={stripePromise}>
-            <CheckoutForm />
-          </Elements>
+          <div className="checkout-container">
+
+            <Elements options={options} stripe={stripePromise}>
+              <CheckoutForm />
+            </Elements>
+            {/* Product Information */}
+            <div className="product-info">
+              <div className="product-info-box">
+                <p className="product-name">Cruddur Premium</p>
+                <p className="product-price">Price: 20€</p>
+              </div>
+            </div>
+          </div>
         )
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 
-  
+
 }
